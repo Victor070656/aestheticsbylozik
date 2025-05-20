@@ -44,7 +44,7 @@ if (isset($_SESSION["user"])) {
                                     <a class="dropdown-item" href="orders.php">Orders</a>
                                     <a class="dropdown-item" href="profile.php">Profile</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="theme/admin/logout.php">Logout</a>
+                                    <a class="dropdown-item" href="logout.php">Logout</a>
                                 </div>
                             </div>
                         <?php endif; ?>
@@ -64,7 +64,7 @@ if (isset($_SESSION["user"])) {
             <div class="row align-items-center">
                 <div class="col-lg-3 col-md-4 col-4">
                     <div class="header-logo">
-                        <a href="./" class="logo-main">
+                        <a href="./" class="logo-main ">
                             <img src="assets/images/logo.png" alt="" style="height: 45px;">
                         </a>
                     </div>

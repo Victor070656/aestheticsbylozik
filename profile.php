@@ -3,7 +3,7 @@ include_once("functions.php");
 session_start();
 
 if (!isset($_SESSION["user"])) {
-    echo "<script>location.href='/'</script>";
+    echo "<script>location.href='login.php'</script>";
 } else {
     $userid = $_SESSION["user"]["userid"];
 }

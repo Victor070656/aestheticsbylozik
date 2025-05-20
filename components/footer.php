@@ -60,7 +60,7 @@
                     </div>
                     <div class="col-xl-4 col-lg-5 col-md-6 col-12 footer-widget">
                         <div class="footer-widget-inner">
-                            <h2 class="text-light">Helen<span class="text-danger">z</span></h2>
+                            <img src="assets/images/logo.png" alt="" style="height: 45px;">
                             <div class="footer-newsletter">
                                 <p class="footer-text mb-3">
                                     Stay up to date with all the news.
@@ -240,7 +240,7 @@
                                 <a class="dropdown-item" href="#">Orders</a>
                                 <a class="dropdown-item" href="profile.php">Profile</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="theme/admin/logout.php">Logout</a>
+                                <a class="dropdown-item" href="logout.php">Logout</a>
                             </div>
                         </div>
                     <?php endif; ?>

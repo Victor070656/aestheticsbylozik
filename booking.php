@@ -121,7 +121,7 @@ if (isset($_GET["s"])) {
                         <!-- product area start -->
                         <div class="col-lg-12 col-md-12 col-12">
                             <form method="post" class="registration-container">
-                                <h1 class="text-center mb-5">Service Booking</h1>
+                                <h1 class="text-center mb-5">Appointment Booking</h1>
 
                                 <!-- Progress Bar -->
                                 <div class="progress-bar-container">
@@ -227,9 +227,10 @@ if (isset($_GET["s"])) {
                                             <div class="invalid-feedback">Please enter a valid date.</div>
                                         </div>
                                         <div class="col-12">
-                                            <label for="securityQuestion" class="form-label">Time</label>
-                                            <select class="form-select" id="securityQuestion" required>
-                                                <option value="" selected disabled>Select your preferred time</option>
+                                            <label for="time" class="form-label">Time</label>
+                                            <select class="form-select" name="time" id="time" required>
+                                                <option value="" selected hidden disabled>Select your preferred time
+                                                </option>
                                                 <option>9:10 AM - 9:55 AM</option>
                                                 <option>10:15 AM - 11:00 AM</option>
                                                 <option>11:20 AM - 12:05 PM</option>
@@ -307,17 +308,26 @@ if (isset($_GET["s"])) {
                                 </div> -->
                                 <?php
                                 if (isset($_POST["submit"])) {
-                                    $fname = $_POST["fname"];
-                                    $lname = $_POST["lname"];
+                                    if (!isset($_SESSION["user"])) {
+                                        echo "<script>location.href='login.php'; alert('Please login before booking appointment')</script>";
+                                        exit;
+                                    }
                                     $email = $_POST["email"];
-                                    $phone = $_POST["phone"];
                                     $service = $_POST["service"];
-                                    $location = $_POST["location"];
-                                    $date = $_POST["date"];
-                                    $time = $_POST["time"];
 
+                                    $getService = mysqli_query($conn, "SELECT * FROM `services` WHERE `id` = '$service'");
+                                    $serv = mysqli_fetch_assoc($getService);
+                                    $_POST["price"] = $serv["price"];
+
+                                    $_SESSION["appointment"] = $_POST;
+
+                                    makePayment(
+                                        $email,
+                                        $_POST["price"],
+                                        "http://localhost/abl/appointment-callback.php"
+                                    );
                                     // Insert into database
-                                    var_dump($_POST);
+                                    // var_dump($_POST);
                                 }
                                 ?>
                             </form>
