@@ -24,7 +24,7 @@ if (isset($_GET["s"])) {
   <!-- The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
   <!-- Title -->
-  <title>Products</title>
+  <title>Product Categories</title>
 
   <!-- Styles -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,800&amp;display=swap" rel="stylesheet">
@@ -60,9 +60,28 @@ if (isset($_GET["s"])) {
           <div class="col">
             <div class="card">
               <div class="card-body">
+                <h4 class="mb-3">Product Categories</h4>
                 <div class="row">
-                  <div class="col-8">
-                    <h4>All Products</h4>
+                  <div class="col-12 mb-4">
+                    <form method="post">
+
+                      <input type="text" name="category" class="form-control mb-3" placeholder="Add a category">
+                      <button class="btn btn-primary" name="add" type="submit">&plus; Add Category</button>
+                      <?php
+                      if (isset($_POST["add"])) {
+                        $category = $_POST["category"];
+
+                        $addCategory = mysqli_query($conn, "INSERT INTO `categories` (`category_name`) VALUES ('$category')");
+
+                        if ($addCategory) {
+
+                          echo "<script>alert('Successfully added ✅'); location.href='product-category.php'</script>";
+                        } else {
+                          echo "<script>alert('An error occured ❌')</script>";
+                        }
+                      }
+                      ?>
+                    </form>
                   </div>
                 </div>
 
@@ -70,15 +89,8 @@ if (isset($_GET["s"])) {
                   <div class="table-responsive">
                     <table class="table invoice-table">
                       <thead>
-                        <tr class="text-nowrap">
-                          <th scope="col">#</th>
-                          <th scope="col">Image</th>
-                          <th scope="col">Product Name</th>
-                          <th scope="col">Category</th>
-                          <th scope="col">Tags</th>
-                          <th scope="col">Price (₦)</th>
-                          <th scope="col">Discount (%)</th>
-                          <th scope="col">Status</th>
+                        <tr class="fw-bold">
+                          <th scope="col">Category Name</th>
                           <th scope="col">Date</th>
                           <th scope="col">Actions</th>
                         </tr>
@@ -86,57 +98,25 @@ if (isset($_GET["s"])) {
                       <tbody>
                         <?php
                         if (isset($s)) {
-                          $getproducts = mysqli_query($conn, "SELECT p.*, c.category_name FROM `products` as p JOIN `categories` as c ON p.category_id = c.id WHERE (p.name LIKE '%$s%') OR (p.tags LIKE '%$s%') OR (p.description LIKE '%$s%') ORDER BY p.id DESC");
+                          $getCategory = mysqli_query($conn, "SELECT * FROM `categories` WHERE (`category_name` LIKE '%$s%') ORDER BY `id` DESC");
                         } else {
-                          $getproducts = mysqli_query($conn, "SELECT p.*, c.category_name FROM `products` as p JOIN `categories` as c ON p.category_id = c.id ORDER BY p.id DESC");
+                          $getCategory = mysqli_query($conn, "SELECT * FROM `categories` ORDER BY `id` DESC");
                         }
 
-                        if (mysqli_num_rows($getproducts) > 0):
-                          while ($product = mysqli_fetch_assoc($getproducts)):
-                            $product = (object) $product;
+                        if (mysqli_num_rows($getCategory) > 0):
+                          while ($product = mysqli_fetch_assoc($getCategory)):
+                            $category = (object) $product;
                             ?>
                             <tr>
-                              <th scope="row"><?= $product->productid ?></th>
-                              <td><img src="<?= '../uploads/' . $product->image ?>"
-                                  style="width: 70px; height: 55px; object-fit: contain; "></td>
-                              <td><?= $product->name; ?></td>
-                              <td><?= $product->category_name; ?></td>
-                              <td>
-                                <?php
-                                $tagss = explode(",", $product->tags);
-                                foreach ($tagss as $tag) {
-                                  $tag = trim($tag);
-                                  ?>
-                                  <span class="badge bg-secondary mb-1"><?= $tag . " "; ?></span>
-                                  <?php
-                                }
-                                ?>
-                              </td>
-                              <td><?= number_format($product->price); ?></td>
-                              <td><?= $product->discount; ?>%</td>
-                              <td>
-                                <?php
-                                if ($product->status == "available") {
+                              <td><?= $category->category_name; ?></td>
 
-                                  ?>
-                                  <a href="unavailable.php?pid=<?= $product->productid; ?>">
-                                    <span class="badge bg-primary small "><?= strtoupper($product->status); ?></span>
-                                  </a>
-                                  <?php
-                                } else {
-                                  ?>
-                                  <a href="available.php?pid=<?= $product->productid; ?>">
-                                    <span class="badge bg-danger small "><?= strtoupper($product->status); ?></span>
-                                  </a>
-                                  <?php
-                                }
-                                ?>
-                              </td>
-                              <td class="text-nowrap"><?= $product->created_at; ?></td>
+                              <td><?= $category->created_at; ?></td>
                               <td>
-                                <a href="addproduct.php?pid=<?= $product->productid; ?>"><i data-feather="edit"></i></a>
+                                <a href="edit-product-category.php?pid=<?= $category->id; ?>"><i
+                                    data-feather="edit"></i></a>
                                 <!-- <a href="#"><i data-feather="eye"></i></a> -->
-                                <a href="deleteproduct.php?pid=<?= $product->productid; ?>"><i data-feather="trash"></i></a>
+                                <a href="delete-product-category.php?pid=<?= $category->id; ?>"><i
+                                    data-feather="trash"></i></a>
                               </td>
                             </tr>
                             <?php

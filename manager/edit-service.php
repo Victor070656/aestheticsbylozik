@@ -6,17 +6,16 @@ if (!isset($_SESSION["admin"])) {
 }
 
 if (isset($_GET["pid"])) {
-  $productid = $_GET["pid"];
+  $id = $_GET["pid"];
 } else {
-  echo "<script>location.href='products.php'</script>";
+  echo "<script>location.href='services.php'</script>";
 }
 
-
-$getproducts = mysqli_query($conn, "SELECT * FROM `products` WHERE `productid` = '$productid'");
-if (mysqli_num_rows($getproducts) > 0) {
-  $product = mysqli_fetch_array($getproducts);
+$getServices = mysqli_query($conn, "SELECT s.*, c.category_name FROM `services` as s JOIN `service_categories` as c ON s.category_id = c.id WHERE s.id = '$id'");
+if (mysqli_num_rows($getServices) == 0) {
+  echo "<script>location.href='services.php'</script>";
 }
-// var_dump($product);
+$service = mysqli_fetch_assoc($getServices);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +32,7 @@ if (mysqli_num_rows($getproducts) > 0) {
   <!-- The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
   <!-- Title -->
-  <title>Edit Products</title>
+  <title>Add Service</title>
 
   <!-- Styles -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,800&amp;display=swap" rel="stylesheet">
@@ -69,13 +68,13 @@ if (mysqli_num_rows($getproducts) > 0) {
           <div class="col">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Edit Product</h5>
+                <h5 class="card-title">Edit Service</h5>
                 <form method="post" enctype="multipart/form-data">
                   <div class="row">
                     <div class="col-12 mb-3">
-                      <label class="form-label">Product Name</label>
-                      <input type="text" name="name" value="<?= $product["name"]; ?>" class="form-control"
-                        placeholder="Beaded Wall clock ...">
+                      <label class="form-label">Service Title</label>
+                      <input type="text" name="title" class="form-control" value="<?= $service['title'] ?>"
+                        placeholder="Teeth Whitening ..." required>
                     </div>
                     <div class="col-12 mb-3">
                       <label class="form-label">Category</label>
@@ -85,7 +84,7 @@ if (mysqli_num_rows($getproducts) > 0) {
                         if (mysqli_num_rows($getCategory) > 0) {
                           while ($row = mysqli_fetch_assoc($getCategory)) {
                             ?>
-                            <option <?= $row["id"] == $product["category_id"] ? "selected" : "" ?> value='<?= $row["id"] ?>'>
+                            <option value='<?= $row["id"] ?>' <?= $service['category_id'] == $row['id'] ? "selected" : "" ?>>
                               <?= $row["category_name"] ?>
                             </option>
                             <?php
@@ -97,68 +96,32 @@ if (mysqli_num_rows($getproducts) > 0) {
                       </select>
                     </div>
                     <div class="col-12 mb-3">
-                      <label class="form-label">Tags</label>
-                      <input type="text" name="tags" value="<?= $product["tags"]; ?>" class="form-control"
-                        placeholder="Associated terms (Seperated by comma ' , ')">
+                      <label class="form-label">Price (₦)</label>
+                      <input type="number" name="price" value="<?= $service['price'] ?>" class="form-control"
+                        placeholder="50000" required>
                     </div>
 
-                    <div class="col-md-6 mb-3">
-                      <label class="form-label">Price ($)</label>
-                      <input type="number" class="form-control" name="price" value="<?= $product["price"]; ?>"
-                        placeholder="$500">
-                    </div>
-                    <div class="col-md-6 mb-3">
-                      <label class="form-label">Discount (%)</label>
-                      <input type="number" step="any" name="discount" value="<?= $product["discount"]; ?>" value="0"
-                        class="form-control" placeholder="5%">
-                    </div>
                     <div class="col-12 mb-3">
-                      <label class="form-label">Description</label>
-                      <textarea name="description" id=""
-                        class=" form-control "><?= $product["description"]; ?></textarea>
-                    </div>
-                    <div class="col-12 mb-3">
-                      <label class="form-label">Product image</label>
-                      <input type="file" name="image" class="form-control">
-                    </div>
-                    <div class="col-12 mb-3">
-                      <input type="submit" name="edit" value="Update Product" class="btn btn-primary">
+                      <input type="submit" name="add" value="Edit Service" class="btn btn-primary">
                     </div>
                   </div>
-                  <!-- edit product -->
+                  <!-- Add products -->
                   <?php
-                  if (isset($_POST["edit"])) {
-                    $name = $_POST["name"];
+                  if (isset($_POST["add"])) {
+                    $title = $_POST["title"];
                     $category = $_POST["category"];
-                    $tags = $_POST["tags"];
                     $price = $_POST["price"];
-                    $discount = $_POST["discount"];
-                    $description = $_POST["description"];
-                    $image = date("His") . $_FILES["image"]["name"];
-                    $tmp_image = $_FILES["image"]["tmp_name"];
-                    $location = "uploads/" . $image;
 
+                    $addService = mysqli_query($conn, "UPDATE `services` SET `category_id` = '$category', `title` = '$title', `price` = '$price' WHERE `id` = '$id'");
 
-                    // var_dump($_FILES["image"]["name"] != "");
-                    if ($_FILES["image"]["name"] == "") {
-                      $editProduct = mysqli_query($conn, "UPDATE `products` SET `category_id`='$category', `name`='$name', `tags`='$tags', `price`='$price', `discount`='$discount', `description`='$description' WHERE `productid`='$productid'");
-                      if ($editProduct) {
-                        echo "<script>alert('Successfully updated ✅'); location.href='products.php'</script>";
-                      } else {
-                        echo "<script>alert('An error occured ❌')</script>";
-                      }
+                    if ($addService) {
+
+                      echo "<script>alert('Successfully updated ✅'); location.href='services.php'</script>";
                     } else {
-                      $editProduct = mysqli_query($conn, "UPDATE `products` SET `category_id`='$category', `name`='$name', `tags`='$tags', `price`='$price', `discount`='$discount', `description`='$description', `image`='$image' WHERE `productid`='$productid'");
-                      if ($editProduct) {
-                        move_uploaded_file($tmp_image, $location);
-                        echo "<script>alert('Successfully updated ✅'); location.href='products.php'</script>";
-                      } else {
-                        echo "<script>alert('An error occured ❌')</script>";
-                      }
+                      echo "<script>alert('An error occured ❌')</script>";
                     }
                   }
                   ?>
-
                 </form>
               </div>
             </div>

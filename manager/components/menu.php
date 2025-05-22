@@ -23,7 +23,7 @@
         </div>
         <div class="" id="headerNav">
             <ul class="navbar-nav">
-                <?php if (basename($_SERVER["SCRIPT_NAME"]) == "products.php" || basename($_SERVER["SCRIPT_NAME"]) == "orders.php" || basename($_SERVER["SCRIPT_NAME"]) == "users.php"): ?>
+                <?php if (basename($_SERVER["SCRIPT_NAME"]) == "products.php" || basename($_SERVER["SCRIPT_NAME"]) == "orders.php" || basename($_SERVER["SCRIPT_NAME"]) == "users.php" || basename($_SERVER["SCRIPT_NAME"]) == "appointments.php"): ?>
                     <li class="nav-item dropdown">
                         <a class="nav-link search-dropdown" href="#" id="searchDropDown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false"><i data-feather="search"></i></a>
@@ -62,11 +62,17 @@
         <li class="<?= basename($_SERVER["SCRIPT_NAME"]) == "addproduct.php" ? 'active-page' : '' ?>">
             <a href="addproduct.php"><i data-feather="plus"></i>Add Product</a>
         </li>
+        <li class="<?= basename($_SERVER["SCRIPT_NAME"]) == "product-category.php" ? 'active-page' : '' ?>">
+            <a href="product-category.php"><i data-feather="layers"></i>Product Category</a>
+        </li>
         <li class="<?= basename($_SERVER["SCRIPT_NAME"]) == "category.php" ? 'active-page' : '' ?>">
             <a href="category.php"><i data-feather="layers"></i>Service Category</a>
         </li>
         <li class="<?= basename($_SERVER["SCRIPT_NAME"]) == "services.php" ? 'active-page' : '' ?>">
             <a href="services.php"><i data-feather="layers"></i>Services</a>
+        </li>
+        <li class="<?= basename($_SERVER["SCRIPT_NAME"]) == "appointments.php" ? 'active-page' : '' ?>">
+            <a href="appointments.php"><i data-feather="layers"></i>Appointments</a>
         </li>
         <li class="<?= basename($_SERVER["SCRIPT_NAME"]) == "orders.php" ? 'active-page' : '' ?>">
             <a href="orders.php"><i data-feather="shopping-cart"></i>Orders</a>

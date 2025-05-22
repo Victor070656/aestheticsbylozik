@@ -8,13 +8,11 @@ if (isset($_GET["s"])) {
   $s = $_GET["s"];
 }
 if (isset($s)) {
-  $getOrders = mysqli_query($conn, "SELECT * FROM `orders` WHERE (`orderid` LIKE '%$s%') OR (`userid` LIKE '%$s%') OR (`status` LIKE '%$s%') ORDER BY `id` DESC");
+  $getAppointment = mysqli_query($conn, "SELECT a.*, s.title FROM `appointments` as a JOIN `services` as s ON a.service_id = s.id WHERE (a.fname LIKE '%$s%') OR (a.lname LIKE '%$s%') OR (a.email LIKE '%$s%') OR (s.title LIKE '%$s%') ORDER BY a.id DESC");
 } else {
-  $getOrders = mysqli_query($conn, "SELECT * FROM `orders` ORDER BY `id` DESC");
+  $getAppointment = mysqli_query($conn, "SELECT a.*, s.title FROM `appointments` as a JOIN `services` as s ON a.service_id = s.id ORDER BY a.id DESC");
 }
 
-$getRate = mysqli_query($conn, "SELECT * FROM `rate`");
-$rate = mysqli_fetch_assoc($getRate);
 
 ?>
 
@@ -33,7 +31,7 @@ $rate = mysqli_fetch_assoc($getRate);
   <!-- The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
   <!-- Title -->
-  <title>Orders</title>
+  <title>Appointments</title>
 
   <!-- Styles -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,800&amp;display=swap" rel="stylesheet">
@@ -61,19 +59,14 @@ $rate = mysqli_fetch_assoc($getRate);
     <?php include("components/menu.php"); ?>
     <div class="page-content">
       <div class="main-wrapper">
-        <!-- <div class="container mb-3 d-flex align-items-center ">
-          <span class="me-3"><b>Dollar Rate: </b><?= $rate["rate"]; ?></span>
-          <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalId">
-            Update Dollar Rate
-          </button>
-        </div> -->
+
         <div class="row">
           <div class="col">
             <div class="card">
               <div class="card-body">
                 <div class="row">
                   <div class="col-8">
-                    <h4>All Orders</h4>
+                    <h4>All Appointments</h4>
                   </div>
                 </div>
 
@@ -87,34 +80,41 @@ $rate = mysqli_fetch_assoc($getRate);
                           <div class="table-responsive">
                             <table class="table invoice-table">
                               <thead>
-                                <tr>
-                                  <th scope="col">#</th>
-                                  <th scope="col">Client</th>
-                                  <th scope="col">Order Date</th>
-                                  <th scope="col">Amount (₦)</th>
-                                  <th scope="col">Status</th>
-                                  <th scope="col">Actions</th>
+                                <tr class="text-nowrap">
+                                  <th scope="col">First Name</th>
+                                  <th scope="col">Last Name</th>
+                                  <th scope="col">Email</th>
+                                  <th scope="col">Phone Number</th>
+                                  <th scope="col">Service</th>
+                                  <th scope="col">Location</th>
+                                  <th scope="col">Scheduled Date</th>
+                                  <th scope="col">Scheduled Time</th>
+                                  <th scope="col">Price</th>
+                                  <th scope="col">Created</th>
+                                  <!-- <th scope="col">Actions</th> -->
                                 </tr>
                               </thead>
                               <tbody>
                                 <?php
-                                if (mysqli_num_rows($getOrders) > 0) {
-                                  $orders = mysqli_fetch_all($getOrders, MYSQLI_ASSOC);
-                                  foreach ($orders as $order) {
-                                    $userid = $order["userid"];
-                                    $getUser = mysqli_query($conn, "SELECT * FROM `users` WHERE `userid` = '$userid'");
-                                    $user = mysqli_fetch_assoc($getUser);
+                                if (mysqli_num_rows($getAppointment) > 0) {
+                                  $items = mysqli_fetch_all($getAppointment, MYSQLI_ASSOC);
+                                  foreach ($items as $item) {
+
                                     ?>
                                     <tr>
-                                      <th scope="row"><?= $order["orderid"]; ?></th>
-                                      <td><?= $user["username"]; ?></td>
-                                      <td><?= $order["created_at"]; ?></td>
-                                      <td><?= number_format($order["amount"]); ?></td>
-                                      <td><span class="badge bg-primary"><?= $order["status"]; ?></span></td>
-                                      <td>
-                                        <a href="view-order.php?oid=<?= $order['orderid']; ?>"><i
-                                            data-feather="eye"></i></a>
-                                      </td>
+                                      <td><?= $item["fname"]; ?></td>
+                                      <td><?= $item["lname"]; ?></td>
+                                      <td><?= $item["email"]; ?></td>
+                                      <td><?= $item["phone"]; ?></td>
+                                      <td><?= $item["title"]; ?></td>
+                                      <td><?= $item["location"]; ?></td>
+                                      <td class="text-nowrap"><?= date("d M Y", strtotime($item["date"])); ?></td>
+                                      <td class="text-nowrap"><?= $item["time"]; ?></td>
+                                      <td><?= $item["price"]; ?></td>
+                                      <td class="text-nowrap"><?= date("d-m-Y H:i", strtotime($item["created_at"])); ?></td>
+                                      <!-- <td>
+                                            <a href="view-order.php?oid=<?= $order['orderid']; ?>"><i data-feather="eye"></i></a>
+                                          </td> -->
                                     </tr>
                                     <?php
                                   }

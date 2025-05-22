@@ -124,9 +124,12 @@ session_start();
                       and
                       own your glow.
                     </p>
-                    <a class="btn-primary slide-btn animate__animated animate__fadeInUp"
-                      href="collection-left-sidebar.html" data-animation="animate__animated animate__fadeInUp">SHOP
+                    <a class="btn-primary slide-btn animate__animated animate__fadeInUp" href="shop.php"
+                      data-animation="animate__animated animate__fadeInUp">SHOP
                       NOW</a>
+                    <a class="btn btn-outline-danger  animate__animated animate__fadeInUp" href="booking.php"
+                      data-animation="animate__animated animate__fadeInUp">Book
+                      Appointment</a>
                   </div>
 
                 </div>
@@ -148,13 +151,16 @@ session_start();
                     </h2>
                     <p class="slide-subheading heading_18 animate__animated animate__fadeInUp"
                       data-animation="animate__animated animate__fadeInUp lh-base">
-                      Expert skincare, body treatments, and cosmetic solutions to help you look good, feel confident,
-                      and
-                      own your glow.
+                      At Aestheticsbylozik, we provide a full range of Cosmetic Medical and Advanced Aesthetic
+                      treatments designed to rejuvenate your skin, sculpt your body, and help you look and feel your
+                      best.
                     </p>
-                    <a class="btn-primary slide-btn animate__animated animate__fadeInUp"
-                      href="collection-left-sidebar.html" data-animation="animate__animated animate__fadeInUp">SHOP
+                    <a class="btn-primary slide-btn animate__animated animate__fadeInUp" href="shop.php"
+                      data-animation="animate__animated animate__fadeInUp">SHOP
                       NOW</a>
+                    <a class="btn btn-outline-danger  animate__animated animate__fadeInUp" href="booking.php"
+                      data-animation="animate__animated animate__fadeInUp">Book
+                      Appointment</a>
                   </div>
 
                 </div>
@@ -176,13 +182,15 @@ session_start();
                     </h2>
                     <p class="slide-subheading heading_18 animate__animated animate__fadeInUp"
                       data-animation="animate__animated animate__fadeInUp lh-base">
-                      Expert skincare, body treatments, and cosmetic solutions to help you look good, feel confident,
-                      and
-                      own your glow.
+                      Our expert team combines advanced technology with personalized care to deliver safe, effective,
+                      and natural-looking results.
                     </p>
-                    <a class="btn-primary slide-btn animate__animated animate__fadeInUp"
-                      href="collection-left-sidebar.html" data-animation="animate__animated animate__fadeInUp">SHOP
+                    <a class="btn-primary slide-btn animate__animated animate__fadeInUp" href="shop.php"
+                      data-animation="animate__animated animate__fadeInUp">SHOP
                       NOW</a>
+                    <a class="btn btn-outline-danger  animate__animated animate__fadeInUp" href="booking.php"
+                      data-animation="animate__animated animate__fadeInUp">Book
+                      Appointment</a>
                   </div>
 
                 </div>

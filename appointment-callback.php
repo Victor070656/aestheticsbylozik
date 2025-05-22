@@ -29,6 +29,7 @@ if (isset($_GET["trxref"])) {
         $query = mysqli_query($conn, "INSERT INTO `appointments` (`userid`, `fname`, `lname`, `email`, `phone`, `service_id`, `location`, `date`, `time`, `price`) VALUES ('$userid', '$fname', '$lname', '$email', '$phone', '$service', '$location', '$date', '$time', '$price')");
         if ($query) {
             echo "<script>location.href='booking.php'; alert('Appointment booked successfully!')</script>";
+            unset($_SESSION["appointment"]);
         } else {
             echo "<script>location.href='booking.php'; alert('Appointment booking failed! contact support')</script>";
         }

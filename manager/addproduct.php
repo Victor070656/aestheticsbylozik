@@ -64,13 +64,29 @@ if (!isset($_SESSION["admin"])) {
                       <input type="text" name="name" class="form-control" placeholder="Beaded Wall clock ..." required>
                     </div>
                     <div class="col-12 mb-3">
+                      <label class="form-label">Category</label>
+                      <select name="category" id="" class="form-control form-select" required>
+                        <option value="" selected hidden>Select Category</option>
+                        <?php
+                        $getCategory = mysqli_query($conn, "SELECT * FROM `categories`");
+                        if (mysqli_num_rows($getCategory) > 0) {
+                          while ($row = mysqli_fetch_assoc($getCategory)) {
+                            echo "<option value='{$row["id"]}'>{$row["category_name"]}</option>";
+                          }
+                        } else {
+                          echo "<option value='' disabled>No Category Found</option>";
+                        }
+                        ?>
+                      </select>
+                    </div>
+                    <div class="col-12 mb-3">
                       <label class="form-label">Tags</label>
                       <input type="text" name="tags" class="form-control" required
                         placeholder="Associated terms (Seperated by comma ' , ')">
                     </div>
 
                     <div class="col-md-6 mb-3">
-                      <label class="form-label">Price ($)</label>
+                      <label class="form-label">Price (₦)</label>
                       <input type="number" class="form-control" required name="price" placeholder="$500">
                     </div>
                     <div class="col-md-6 mb-3">
@@ -95,19 +111,19 @@ if (!isset($_SESSION["admin"])) {
                   if (isset($_POST["add"])) {
                     $productid = rand(100000, 999999);
                     $name = $_POST["name"];
+                    $category = $_POST["category"];
                     $tags = $_POST["tags"];
                     $price = $_POST["price"];
                     $discount = $_POST["discount"];
                     $description = $_POST["description"];
                     $image = date("YmdHis") . $_FILES["image"]["name"];
                     $tmp_image = $_FILES["image"]["tmp_name"];
-                    $location = "uploads/" . $image;
+                    $location = "../uploads/" . $image;
 
 
-                    $addProduct = mysqli_query($conn, "INSERT INTO `products` (`productid`, `name`, `tags`, `price`, `discount`, `description`, `image`) 
-                    VALUES ('$productid','$name','$tags','$price','$discount','$description','$image')");
-                    // INSERT INTO `products`(`id`, `productid`, `name`, `tags`, `price`, `discount`, `description`, `image`, `status`, `created_at`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]','[value-9]','[value-10]')
-                  
+                    $addProduct = mysqli_query($conn, "INSERT INTO `products` (`category_id`, `productid`, `name`, `tags`, `price`, `discount`, `description`, `image`) 
+                    VALUES ('$category', '$productid','$name','$tags','$price','$discount','$description','$image')");
+
                     if ($addProduct) {
                       move_uploaded_file($tmp_image, $location);
                       echo "<script>alert('Successfully added ✅'); location.href='products.php'</script>";
