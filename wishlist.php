@@ -155,7 +155,7 @@ if (!isset($_SESSION["user"])) {
                                                 <div class="product-card-img">
                                                     <a class="hover-switch" href="product.php?pid=<?= $products["productid"]; ?>">
                                                         <img class="primary-img" src="uploads/<?= $products["image"]; ?>"
-                                                            style="height: 320px; width: 100%; object-fit: contain; background-color: #fff; "
+                                                            style="aspect-ratio: 16/9; width: 100%; object-fit: cover; background-color: #fff; "
                                                             alt="product-img" />
                                                     </a>
 
@@ -186,13 +186,13 @@ if (!isset($_SESSION["user"])) {
                                                     </h3>
                                                     <?php if ($products["discount"] > 0): ?>
                                                         <div class="product-card-price">
-                                                            <span class="card-price-regular">$<?= $discount; ?></span>
+                                                            <span class="card-price-regular">₦<?= $discount; ?></span>
                                                             <span
-                                                                class="card-price-compare text-decoration-line-through">$<?= $products["price"]; ?></span>
+                                                                class="card-price-compare text-decoration-line-through">₦<?= $products["price"]; ?></span>
                                                         </div>
                                                     <?php else: ?>
                                                         <div class="product-card-price">
-                                                            <span class="card-price-regular">$<?= $products["price"]; ?></span>
+                                                            <span class="card-price-regular">₦<?= $products["price"]; ?></span>
                                                         </div>
                                                     <?php endif; ?>
                                                 </div>

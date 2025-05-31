@@ -42,6 +42,8 @@ if ($total <= 1000) {
 } else {
     $shipping = $total * 0.25;
 }
+$topay = $subtotal + $shipping;
+
 ?>
 <!doctype html>
 <html lang="en" class="no-js">
@@ -177,8 +179,7 @@ if ($total <= 1000) {
                                                 <div class="row">
                                                     <textarea name="items"
                                                         hidden="hidden"><?= $info["items"]; ?></textarea>
-                                                    <input type="hidden" name="amount"
-                                                        value="<?= $info["amount"]; ?>" />
+                                                    <input type="hidden" name="amount" value="<?= $topay; ?>" />
                                                     <div class="col-lg-6 col-md-12 col-12">
                                                         <fieldset>
                                                             <label class="label">First name
@@ -257,25 +258,25 @@ if ($total <= 1000) {
                                         <div class="cart-total-box mt-4">
                                             <div class="subtotal-item subtotal-box">
                                                 <h4 class="subtotal-title">Amount:</h4>
-                                                <p class="subtotal-value">$<?= $total; ?></p>
-                                            </div>
-                                            <div class="subtotal-item subtotal-box">
-                                                <h4 class="subtotal-title">Subtotals:</h4>
-                                                <p class="subtotal-value">$<?= $subtotal; ?></p>
+                                                <p class="subtotal-value">₦<?= $total; ?></p>
                                             </div>
                                             <div class="subtotal-item discount-box">
                                                 <h4 class="subtotal-title">Discount:</h4>
-                                                <p class="subtotal-value">$<?= $discount; ?></p>
+                                                <p class="subtotal-value">₦<?= $discount; ?></p>
+                                            </div>
+                                            <div class="subtotal-item subtotal-box">
+                                                <h4 class="subtotal-title">Subtotals:</h4>
+                                                <p class="subtotal-value">₦<?= $subtotal; ?></p>
                                             </div>
                                             <div class="subtotal-item shipping-box">
                                                 <h4 class="subtotal-title">Shipping:</h4>
-                                                <p class="subtotal-value">$<?= $shipping; ?></p>
+                                                <p class="subtotal-value">₦<?= $shipping; ?></p>
                                             </div>
 
                                             <hr />
                                             <div class="subtotal-item discount-box">
                                                 <h4 class="subtotal-title">Total:</h4>
-                                                <p class="subtotal-value">$<?= $amount; ?></p>
+                                                <p class="subtotal-value">₦<?= $topay; ?></p>
                                             </div>
                                             <p class="shipping_text">Shipping & taxes calculated at checkout</p>
                                             <div class="d-flex justify-content-center mt-4">

@@ -180,7 +180,7 @@ $orders = mysqli_fetch_assoc($getOrders);
                                     </div>
                                     <div class="me-3">
                                         <p class="fw-bold">
-                                            <?= str_replace(" ", "<br>", $orders["created_at"]); ?>
+                                            <?= date("d M, Y H:i", strtotime($orders["created_at"])); ?>
                                         </p>
                                     </div>
                                 </div>

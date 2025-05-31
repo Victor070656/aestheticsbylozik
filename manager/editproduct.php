@@ -80,8 +80,9 @@ if (mysqli_num_rows($getproducts) > 0) {
                     <div class="col-12 mb-3">
                       <label class="form-label">Category</label>
                       <select name="category" id="" class="form-control form-select" required>
+                        <option value="" selected hidden disabled>Select Category</option>
                         <?php
-                        $getCategory = mysqli_query($conn, "SELECT * FROM `service_categories`");
+                        $getCategory = mysqli_query($conn, "SELECT * FROM `categories`");
                         if (mysqli_num_rows($getCategory) > 0) {
                           while ($row = mysqli_fetch_assoc($getCategory)) {
                             ?>

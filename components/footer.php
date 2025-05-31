@@ -17,12 +17,12 @@
                                 </span>
                             </h4>
                             <div class="footer-menu list-unstyled mb-0 d-md-block text-white ">
-                                <p style="text-align: justify;">Passion Personified: More than just footwear, Helenz
-                                    Footwear embodies the rich heritage of Africa, brought to life by Helen Ogochukwu
-                                    Nwiba's unwavering passion. Each piece is a vibrant tapestry, showcasing the
-                                    intricate beadwork, bold colors, and storytelling motifs that are hallmarks of
-                                    African artistry. With Aesthetics By Lozik, every step is a walk through art, a
-                                    celebration of culture, and a connection to something bigger.</p>
+                                <p style="text-align: justify;">Aesthetics By Lozik: Elevate your beauty and wellness
+                                    journey with our exceptional services. From rejuvenating facials to expert skincare
+                                    consultations, we are dedicated to enhancing your natural glow. Our commitment to
+                                    quality and personalized care ensures every experience is tailored to your unique
+                                    needs. Discover the art of self-care and let us help you shine with confidence and
+                                    radiance.</p>
                             </div>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                                     <a href="about-us.php">About</a>
                                 </li>
                                 <li class="footer-menu-item">
-                                    <a href="faq.php">FAQ</a>
+                                    <a href="services.php">Services</a>
                                 </li>
                                 <li class="footer-menu-item">
                                     <a href="contact.php">Contact</a>
@@ -162,7 +162,7 @@
 <div class="offcanvas offcanvas-start d-flex d-lg-none" tabindex="-1" id="drawer-menu">
     <div class="offcanvas-wrapper">
         <div class="offcanvas-header border-btm-black">
-            <img src="assets/images/logo.png" alt="" style="height: 45px;">
+            <img src="assets/images/logo.png" alt="" style="height: 50px;" class="mb-3">
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body p-0 d-flex flex-column justify-content-between">
@@ -170,7 +170,7 @@
                 <ul class="main-menu list-unstyled">
                     <li class="menu-list-item nav-item has-dropdown active">
                         <div class="mega-menu-header">
-                            <a class="nav-link active" href="/"> Home </a>
+                            <a class="nav-link active" href="./"> Home </a>
                         </div>
                     </li>
                     <li class="menu-list-item nav-item">
@@ -194,7 +194,7 @@
                     </li>
                     <li class="menu-list-item nav-item has-dropdown">
                         <div class="mega-menu-header">
-                            <a class="nav-link active" href="faq.php"> FAQ </a>
+                            <a class="nav-link active" href="services.php"> Services </a>
                         </div>
                     </li>
                     <li class="menu-list-item nav-item">
@@ -214,7 +214,7 @@
                                 </path>
                             </svg>
                         </span>
-                        Call: +1 078 2376
+                        Call: 0703 883 9142 or 0809 373 4438
                     </a>
                 </li>
                 <li class="utilty-menu-item">
@@ -237,7 +237,8 @@
                                 <?= isset($userDetail) ? $userDetail["username"] : "User" ?>
                             </button>
                             <div class="dropdown-menu dropdown-menu-start" aria-labelledby="triggerId">
-                                <a class="dropdown-item" href="#">Orders</a>
+                                <a class="dropdown-item" href="orders.php">Orders</a>
+                                <a class="dropdown-item" href="appointments.php">Appointments</a>
                                 <a class="dropdown-item" href="profile.php">Profile</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="logout.php">Logout</a>
@@ -246,16 +247,21 @@
                     <?php endif; ?>
                 </li>
                 <li class="utilty-menu-item">
-                    <a class="header-action-item header-wishlist"
+                    <a class="header-action-item position-relative header-wishlist"
                         href="<?= isset($_SESSION["user"]) ? 'wishlist.php' : 'login.php'; ?>">
-                        <span class="utilty-icon-wrapper">
-                            <svg class="icon icon-wishlist" width="26" height="22" viewBox="0 0 26 22" fill="#000"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M6.96429 0.000183105C3.12305 0.000183105 0 3.10686 0 6.84843C0 8.15388 0.602121 9.28455 1.16071 10.1014C1.71931 10.9181 2.29241 11.4425 2.29241 11.4425L12.3326 21.3439L13 22.0002L13.6674 21.3439L23.7076 11.4425C23.7076 11.4425 26 9.45576 26 6.84843C26 3.10686 22.877 0.000183105 19.0357 0.000183105C15.8474 0.000183105 13.7944 1.88702 13 2.68241C12.2056 1.88702 10.1526 0.000183105 6.96429 0.000183105ZM6.96429 1.82638C9.73912 1.82638 12.3036 4.48008 12.3036 4.48008L13 5.25051L13.6964 4.48008C13.6964 4.48008 16.2609 1.82638 19.0357 1.82638C21.8613 1.82638 24.1429 4.10557 24.1429 6.84843C24.1429 8.25732 22.4018 10.1584 22.4018 10.1584L13 19.4036L3.59821 10.1584C3.59821 10.1584 3.14844 9.73397 2.69866 9.07411C2.24888 8.41426 1.85714 7.55466 1.85714 6.84843C1.85714 4.10557 4.13867 1.82638 6.96429 1.82638Z"
-                                    fill="#000" />
-                            </svg>
-                        </span>
+                        <?php
+                        if (isset($_SESSION["user"])):
+                            $getWishList = mysqli_query($conn, "SELECT * FROM `wish` WHERE `userid` = '$userid'");
+                            ?>
+                            <small class="position-absolute text-danger fw-bold "
+                                style="top: -5px; right: -10px;"><?= $getWishList->num_rows ?></small>
+                        <?php endif; ?>
+                        <svg class="icon icon-wishlist" width="26" height="22" viewBox="0 0 26 22" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M6.96429 0.000183105C3.12305 0.000183105 0 3.10686 0 6.84843C0 8.15388 0.602121 9.28455 1.16071 10.1014C1.71931 10.9181 2.29241 11.4425 2.29241 11.4425L12.3326 21.3439L13 22.0002L13.6674 21.3439L23.7076 11.4425C23.7076 11.4425 26 9.45576 26 6.84843C26 3.10686 22.877 0.000183105 19.0357 0.000183105C15.8474 0.000183105 13.7944 1.88702 13 2.68241C12.2056 1.88702 10.1526 0.000183105 6.96429 0.000183105ZM6.96429 1.82638C9.73912 1.82638 12.3036 4.48008 12.3036 4.48008L13 5.25051L13.6964 4.48008C13.6964 4.48008 16.2609 1.82638 19.0357 1.82638C21.8613 1.82638 24.1429 4.10557 24.1429 6.84843C24.1429 8.25732 22.4018 10.1584 22.4018 10.1584L13 19.4036L3.59821 10.1584C3.59821 10.1584 3.14844 9.73397 2.69866 9.07411C2.24888 8.41426 1.85714 7.55466 1.85714 6.84843C1.85714 4.10557 4.13867 1.82638 6.96429 1.82638Z"
+                                fill="black" />
+                        </svg>
                         <span>My wishlist</span>
                     </a>
                 </li>

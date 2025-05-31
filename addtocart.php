@@ -11,7 +11,7 @@ if (!isset($_SESSION["user"])) {
 if (isset($_GET["pid"])) {
     $productid = $_GET["pid"];
 } else {
-    echo "<script>location.href='/'</script>";
+    echo "<script>location.href='./'</script>";
 }
 
 

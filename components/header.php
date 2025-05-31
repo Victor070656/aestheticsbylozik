@@ -42,6 +42,7 @@ if (isset($_SESSION["user"])) {
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-start" aria-labelledby="triggerId">
                                     <a class="dropdown-item" href="orders.php">Orders</a>
+                                    <a class="dropdown-item" href="appointments.php">Appointments</a>
                                     <a class="dropdown-item" href="profile.php">Profile</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="logout.php">Logout</a>
@@ -101,9 +102,9 @@ if (isset($_SESSION["user"])) {
                                 </div>
                             </li>
                             <li
-                                class="menu-list-item nav-item <?= basename($_SERVER["SCRIPT_NAME"]) == "faq.php" ? "active" : ""; ?>">
+                                class="menu-list-item nav-item <?= basename($_SERVER["SCRIPT_NAME"]) == "services.php" ? "active" : ""; ?>">
                                 <div class="mega-menu-header">
-                                    <a class="nav-link text-nowrap" href="faq.php"> FAQ </a>
+                                    <a class="nav-link text-nowrap" href="services.php"> Services </a>
                                 </div>
                             </li>
                             <li
@@ -125,8 +126,15 @@ if (isset($_SESSION["user"])) {
                                 </svg>
                             </a>
                         <?php endif; ?>
-                        <a class="header-action-item header-wishlist ms-4 d-none d-lg-block"
+                        <a class="header-action-item position-relative header-wishlist ms-4 d-none d-lg-block"
                             href="<?= isset($_SESSION["user"]) ? 'wishlist.php' : 'login.php'; ?>">
+                            <?php
+                            if (isset($_SESSION["user"])):
+                                $getWishList = mysqli_query($conn, "SELECT * FROM `wish` WHERE `userid` = '$userid'");
+                                ?>
+                                <small class="position-absolute text-danger fw-bold "
+                                    style="top: -5px; right: -5px;"><?= $getWishList->num_rows ?></small>
+                            <?php endif; ?>
                             <svg class="icon icon-wishlist" width="26" height="22" viewBox="0 0 26 22" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -134,8 +142,15 @@ if (isset($_SESSION["user"])) {
                                     fill="black" />
                             </svg>
                         </a>
-                        <a class="header-action-item header-cart ms-4"
+                        <a class="header-action-item position-relative header-cart ms-4"
                             href="<?= isset($_SESSION["user"]) ? 'cart.php' : 'login.php'; ?>">
+                            <?php
+                            if (isset($_SESSION["user"])):
+                                $getCartInfo = mysqli_query($conn, "SELECT * FROM `cart` WHERE `userid` = '$userid'");
+                                ?>
+                                <small class="position-absolute text-danger fw-bold "
+                                    style="top: -5px; right: -5px;"><?= $getCartInfo->num_rows ?></small>
+                            <?php endif; ?>
                             <svg class="icon icon-cart" width="24" height="26" viewBox="0 0 24 26" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path

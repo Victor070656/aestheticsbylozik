@@ -65,6 +65,45 @@ function sendMail($email, $subject, $body, $success = "Message has been sent")
     }
 
 }
+function sendNotification($subject, $body)
+{
+
+    //Create an instance; passing `true` enables exceptions
+    $mail = new PHPMailer(true);
+
+    try {
+        //Server settings
+        $mail->SMTPDebug = 0;                      //Enable verbose debug output
+        $mail->isSMTP();                                            //Send using SMTP
+        $mail->Host = 'tradeformefx.com';                     //Set the SMTP server to send through
+        $mail->SMTPAuth = true;                                   //Enable SMTP authentication
+        $mail->Username = 'support@tradeformefx.com';                     //SMTP username
+        $mail->Password = '@Admin2024';                               //SMTP password
+        // $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;            //Enable implicit TLS encryption
+        // $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+        $mail->Port = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+        //Recipients
+        $mail->setFrom('support@tradeformefx.com', 'Aesthetics By Lozik');
+        $mail->addAddress("ikechukwuv052@gmail.com");               //Name is optional
+
+
+        //Content
+        $mail->isHTML(true);                                  //Set email format to HTML
+        $mail->Subject = $subject;
+        $mail->Body = $body;
+        //        $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+        $mail->send();
+        // echo "<script>alert('$success')</script>";
+        return true;
+    } catch (Exception $e) {
+        // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        return false;
+    }
+
+}
 
 
 function makePayment($email, $amount, $callback)

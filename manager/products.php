@@ -134,7 +134,7 @@ if (isset($_GET["s"])) {
                               </td>
                               <td class="text-nowrap"><?= $product->created_at; ?></td>
                               <td>
-                                <a href="addproduct.php?pid=<?= $product->productid; ?>"><i data-feather="edit"></i></a>
+                                <a href="editproduct.php?pid=<?= $product->productid; ?>"><i data-feather="edit"></i></a>
                                 <!-- <a href="#"><i data-feather="eye"></i></a> -->
                                 <a href="deleteproduct.php?pid=<?= $product->productid; ?>"><i data-feather="trash"></i></a>
                               </td>

@@ -147,17 +147,14 @@ session_start();
                   <div class="content-box slide-content py-4">
                     <h2 class="slide-heading heading_48 animate__animated animate__fadeInUp mb-3"
                       data-animation="animate__animated animate__fadeInUp">
-                      Welcome To <br> Aesthetics By Lozik
+                      Medical-Grade Aesthetics, <br> Personalized for You
                     </h2>
                     <p class="slide-subheading heading_18 animate__animated animate__fadeInUp"
                       data-animation="animate__animated animate__fadeInUp lh-base">
-                      At Aestheticsbylozik, we provide a full range of Cosmetic Medical and Advanced Aesthetic
-                      treatments designed to rejuvenate your skin, sculpt your body, and help you look and feel your
-                      best.
+                      Experience advanced skin solutions tailored to your unique needs.
                     </p>
                     <a class="btn-primary slide-btn animate__animated animate__fadeInUp" href="shop.php"
-                      data-animation="animate__animated animate__fadeInUp">SHOP
-                      NOW</a>
+                      data-animation="animate__animated animate__fadeInUp">Explore Our Products</a>
                     <a class="btn btn-outline-danger  animate__animated animate__fadeInUp" href="booking.php"
                       data-animation="animate__animated animate__fadeInUp">Book
                       Appointment</a>
@@ -178,12 +175,11 @@ session_start();
                   <div class="content-box slide-content py-4">
                     <h2 class="slide-heading heading_48 animate__animated animate__fadeInUp mb-3"
                       data-animation="animate__animated animate__fadeInUp">
-                      Welcome To <br> Aesthetics By Lozik
+                      From Acne to Confidence <br> Tola's Story
                     </h2>
                     <p class="slide-subheading heading_18 animate__animated animate__fadeInUp"
                       data-animation="animate__animated animate__fadeInUp lh-base">
-                      Our expert team combines advanced technology with personalized care to deliver safe, effective,
-                      and natural-looking results.
+                      After 10 years of struggling, I got my beauty back in 3 months
                     </p>
                     <a class="btn-primary slide-btn animate__animated animate__fadeInUp" href="shop.php"
                       data-animation="animate__animated animate__fadeInUp">SHOP
@@ -266,146 +262,98 @@ session_start();
       </div>
       <!-- trusted badge end -->
 
-      <!-- collection start -->
-      <div class="featured-collection mt-100 overflow-hidden">
-        <div class="collection-tab-inner">
-          <div class="container">
-            <div class="section-header text-center">
-              <h2 class="section-heading">Popular Products</h2>
+      <section class="container py-5  mt-100">
+        <div class="row align-items-center">
+          <!-- Left Content -->
+          <div class="col-md-6 mb-4 mb-md-0">
+            <h1 class="fw-bold display-5">Discover the Secret Healthy, Radiant Skin</h1>
+            <p class="lead text-muted">
+              Our formulas combine the best of nature with cutting-edge science. Packed with all-natural botanicals as
+              well as clinically proven actives, each product helps your skin glow.
+            </p>
+            <div class="d-flex gap-3 my-4">
+              <a href="#" class="btn btn-warning btn-sm rounded-pill px-4">Shop Now</a>
+              <a href="#" class="btn btn-outline-secondary btn-sm rounded-pill px-4">Book Appointment</a>
             </div>
-            <div class="row">
-              <?php
-              $a = ["DESC", "ASC"];
-              $i = rand(0, 1);
-              $o = $a[$i];
-              $getPopularProducts = mysqli_query($conn, "SELECT * FROM `products` ORDER BY `productid` $o LIMIT 8");
-
-              if (mysqli_num_rows($getPopularProducts) > 0):
-                while ($popular = mysqli_fetch_assoc($getPopularProducts)):
-                  $discount;
-                  if ($popular["discount"] > 0) {
-                    $discount = $popular["price"] - ($popular["price"] * ($popular["discount"] / 100));
-                  }
-
-
-                  ?>
-                  <div class="col-lg-3 col-md-6 col-6" data-aos="fade-up" data-aos-duration="700">
-                    <div class="product-card shadow-sm">
-                      <div class="product-card-img">
-                        <a class="hover-switch" href="product.php?pid=<?= $popular["productid"]; ?>">
-                          <img class="primary-img" src="uploads/<?= $popular["image"]; ?>"
-                            style="height: 320px; width: 100%; object-fit: contain; background-color: #fff; "
-                            alt="product-img" />
-                        </a>
-
-                        <div class="product-badge">
-                          <!-- <span class="badge-label badge-new rounded">Featured</span>
-                      <span class="badge-label badge-percentage rounded">-44%</span> -->
-                        </div>
-
-                        <div class="product-card-action product-card-action-2 justify-content-center">
-
-
-                          <a href="addtowish.php?pid=<?= $popular["productid"]; ?>" class="action-card action-wishlist">
-                            <svg class="icon icon-wishlist" width="26" height="22" viewBox="0 0 26 22" fill="none"
-                              xmlns="http://www.w3.org/2000/svg">
-                              <path
-                                d="M6.96429 0.000183105C3.12305 0.000183105 0 3.10686 0 6.84843C0 8.15388 0.602121 9.28455 1.16071 10.1014C1.71931 10.9181 2.29241 11.4425 2.29241 11.4425L12.3326 21.3439L13 22.0002L13.6674 21.3439L23.7076 11.4425C23.7076 11.4425 26 9.45576 26 6.84843C26 3.10686 22.877 0.000183105 19.0357 0.000183105C15.8474 0.000183105 13.7944 1.88702 13 2.68241C12.2056 1.88702 10.1526 0.000183105 6.96429 0.000183105ZM6.96429 1.82638C9.73912 1.82638 12.3036 4.48008 12.3036 4.48008L13 5.25051L13.6964 4.48008C13.6964 4.48008 16.2609 1.82638 19.0357 1.82638C21.8613 1.82638 24.1429 4.10557 24.1429 6.84843C24.1429 8.25732 22.4018 10.1584 22.4018 10.1584L13 19.4036L3.59821 10.1584C3.59821 10.1584 3.14844 9.73397 2.69866 9.07411C2.24888 8.41426 1.85714 7.55466 1.85714 6.84843C1.85714 4.10557 4.13867 1.82638 6.96429 1.82638Z"
-                                fill="#00234D" />
-                            </svg>
-                          </a>
-
-                          <a href="addtocart.php?pid=<?= $popular["productid"]; ?>" class="action-card action-addtocart">
-                            <svg class="icon icon-cart" width="24" height="26" viewBox="0 0 24 26" fill="none"
-                              xmlns="http://www.w3.org/2000/svg">
-                              <path
-                                d="M12 0.000183105C9.25391 0.000183105 7 2.25409 7 5.00018V6.00018H2.0625L2 6.93768L1 24.9377L0.9375 26.0002H23.0625L23 24.9377L22 6.93768L21.9375 6.00018H17V5.00018C17 2.25409 14.7461 0.000183105 12 0.000183105ZM12 2.00018C13.6562 2.00018 15 3.34393 15 5.00018V6.00018H9V5.00018C9 3.34393 10.3438 2.00018 12 2.00018ZM3.9375 8.00018H7V11.0002H9V8.00018H15V11.0002H17V8.00018H20.0625L20.9375 24.0002H3.0625L3.9375 8.00018Z"
-                                fill="#00234D" />
-                            </svg>
-                          </a>
-                        </div>
-                      </div>
-                      <div class="product-card-details px-2 pb-2">
-
-                        <h3 class="product-card-title text-truncate ">
-                          <a class="" href="product.php?pid=<?= $popular["productid"]; ?>"><?= $popular["name"]; ?></a>
-                        </h3>
-                        <?php if ($popular["discount"] > 0): ?>
-                          <div class="product-card-price">
-                            <span class="card-price-regular">$<?= $discount; ?></span>
-                            <span class="card-price-compare text-decoration-line-through">$<?= $popular["price"]; ?></span>
-                          </div>
-                        <?php else: ?>
-                          <div class="product-card-price">
-                            <span class="card-price-regular">$<?= $popular["price"]; ?></span>
-                          </div>
-                        <?php endif; ?>
-                      </div>
-                    </div>
-                  </div>
-                  <?php
-                endwhile;
-              endif;
-              ?>
+            <div class="d-flex align-items-center gap-3">
+              <!-- Avatars -->
+              <div class="d-flex">
+                <img src="https://i.pravatar.cc/40?img=1" class="rounded-circle border border-white me-n2" width="40"
+                  height="40" alt="">
+                <img src="https://i.pravatar.cc/40?img=2" class="rounded-circle border border-white me-n2" width="40"
+                  height="40" alt="">
+                <img src="https://i.pravatar.cc/40?img=3" class="rounded-circle border border-white" width="40"
+                  height="40" alt="">
+              </div>
+              <p class="mb-0 text-muted small">
+                People love our natural ingredients—proven by nature, proven by science.
+              </p>
             </div>
-            <div class="view-all text-center" data-aos="fade-up" data-aos-duration="700">
-              <a class="btn-primary" href="shop.php">VIEW ALL</a>
+          </div>
+
+          <!-- Right Image -->
+          <div class="col-md-6 position-relative">
+            <div class="position-relative overflow-hidden rounded-4 shadow">
+              <img src="assets/images/web/12.webp" alt="Skincare model" class="img-fluid rounded-4 w-100">
+              <!-- Rotated text -->
+              <div class="position-absolute top-0 end-0 bg-warning text-white fw-bold py-2 px-3"
+                style="transform: rotate(90deg) translate(0, -100%); transform-origin: top right; white-space: nowrap;">
+                GLOW TO YOUR SKIN. GLOW TO YOUR SKIN. GLOW TO YOUR SKIN.
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- collection end -->
+      </section>
+
 
       <!-- banner start -->
-      <div class="banner-section mt-100 overflow-hidden">
-        <div class="banner-section-inner">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-6 col-md-6 col-12" data-aos="fade-right" data-aos-duration="1200">
-                <a class="banner-item position-relative rounded" href="shop.php">
-                  <img class="banner-img" src="assets/img/banner/banner1.jpg" alt="banner-1" />
-                  <div class="content-absolute content-slide">
-                    <div class="container height-inherit d-flex align-items-center">
-                      <div class="content-box banner-content p-4">
-                        <p class="heading_18 mb-3 text-white">Male footwear</p>
-                        <h2 class="heading_34 text-white">
-                          2% - 10% off for <br />men footwear
-                        </h2>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="col-lg-6 col-md-6 col-12" data-aos="fade-left" data-aos-duration="1200">
-                <a class="banner-item position-relative rounded" href="shop.php">
-                  <img class="banner-img" src="assets/img/banner/banner2.jpg" alt="banner-2" />
-                  <div class="content-absolute content-slide">
-                    <div class="container height-inherit d-flex align-items-center">
-                      <div class="content-box banner-content p-4">
-                        <p class="heading_18 mb-3 text-white">Female footwear</p>
-                        <h2 class="heading_34 text-white">
-                          2% - 10% off for <br />women footwear
-                        </h2>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
+      <section class="bg-light mt-100 py-5">
+        <div class="container">
+          <div class="row align-items-center">
+            <!-- Left Image -->
+            <div class="col-md-6 mb-4 mb-md-0">
+              <img src="assets/images/web/03.webp" alt="Architectural Structure"
+                class="img-fluid rounded-start-4 w-100 shadow-sm">
+            </div>
+
+            <!-- Right Text -->
+            <div class="col-md-6">
+              <h5 class="text-success fw-bold mb-3">Who we are?</h5>
+              <p class="text-muted">
+                Aesthetics By Lozik is more than just a brand; it is a commitment to the art and science of beauty and
+                self-care. We are passionate about helping individuals achieve their best selves through expert
+                skincare, body treatments, and cosmetic solutions that are tailored to meet diverse needs. Our approach
+                combines cutting-edge technology with the finest natural ingredients, ensuring that every product and
+                service we offer is safe, effective, and personalized.
+
+                At Aesthetics By Lozik, we believe that beauty is not just skin deep—it is a reflection of confidence,
+                self-love, and empowerment. Our mission is to inspire and enable you to embrace your unique beauty, own
+                your glow, and step into the world with confidence. Whether you are looking to rejuvenate your skin,
+                enhance your natural features, or simply indulge in self-care, we are here to provide solutions that are
+                as unique as you are.
+
+                From advanced skincare formulations to transformative body treatments, every aspect of our offerings is
+                designed with your well-being in mind. We are dedicated to creating a space where beauty meets
+                innovation, and where you can trust that your needs are our priority. Join us on this journey to
+                discover the secret to healthy, radiant skin and a confident, glowing you. Aesthetics By Lozik—where
+                beauty meets excellence.
+              </p>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
       <!-- banner end -->
 
       <!-- featured collection start -->
-      <div class="featured-collection-section mt-100 home-section overflow-hidden">
+      <div class="featured-collection-section mt-100 mb-5 home-section overflow-hidden">
         <div class="container">
           <div class="section-header text-center">
             <p class="section-subheading">WHAT'S NEW</p>
             <h2 class="section-heading">The Latest Drop</h2>
           </div>
 
-          <div class="row">
+          <div class="row justify-content-center">
             <?php
             $getPopularProducts = mysqli_query($conn, "SELECT * FROM `products` ORDER BY `id` DESC LIMIT 4");
 
@@ -423,7 +371,7 @@ session_start();
                     <div class="product-card-img">
                       <a class="hover-switch" href="product.php?pid=<?= $popular["productid"]; ?>">
                         <img class="primary-img" src="uploads/<?= $popular["image"]; ?>"
-                          style="height: 320px; width: 100%; object-fit: contain; background-color: #fff; "
+                          style="aspect-ratio: 16/9; width: 100%; object-fit: cover; background-color: #fff; "
                           alt="product-img" />
                       </a>
 
@@ -461,12 +409,12 @@ session_start();
                       </h3>
                       <?php if ($popular["discount"] > 0): ?>
                         <div class="product-card-price">
-                          <span class="card-price-regular">$<?= $discount; ?></span>
-                          <span class="card-price-compare text-decoration-line-through">$<?= $popular["price"]; ?></span>
+                          <span class="card-price-regular">₦<?= $discount; ?></span>
+                          <span class="card-price-compare text-decoration-line-through">₦<?= $popular["price"]; ?></span>
                         </div>
                       <?php else: ?>
                         <div class="product-card-price">
-                          <span class="card-price-regular">$<?= $popular["price"]; ?></span>
+                          <span class="card-price-regular">₦<?= $popular["price"]; ?></span>
                         </div>
                       <?php endif; ?>
                     </div>
@@ -485,31 +433,22 @@ session_start();
       <!-- featured collection end -->
 
       <!-- single banner start -->
-      <div class="single-banner-section mt-100 overflow-hidden">
-        <div class="position-relative overlay">
-          <img class="single-banner-img" src="assets/img/banner/single-banner.jpg" alt="slide-1" />
+      <section class="position-relative text-center mt-100 text-white"
+        style="background: url('assets/images/web/08.webp') no-repeat center center/cover; min-height: 300px;">
+        <!-- Overlay -->
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark" style="opacity: .85;"></div>
 
-          <div class="content-absolute content-slide">
-            <div class="container height-inherit d-flex align-items-center">
-              <div class="content-box single-banner-content py-4">
-                <h2 class="single-banner-heading heading_42 text-white animate__animated animate__fadeInUp"
-                  data-animation="animate__animated animate__fadeInUp">
-                  Climb up to the mountain with Aesthetics By Lozik
-                </h2>
-                <p class="single-banner-text text_16 text-white animate__animated animate__fadeInUp"
-                  data-animation="animate__animated animate__fadeInUp">
-                  International shipping, and fast delivery. Aesthetics By Lozik Beaded African Footwear for
-                  men & women
-                </p>
-                <a class="btn-primary single-banner-btn animate__animated animate__fadeInUp" href="shop.php"
-                  data-animation="animate__animated animate__fadeInUp">
-                  SHOP NOW
-                </a>
-              </div>
-            </div>
-          </div>
+        <!-- Content -->
+        <div class="position-relative d-flex flex-column justify-content-center align-items-center h-100 py-5">
+          <h2 class="fw-bold text-light display-5">Discover Your Perfect Product</h2>
+          <p class="lead px-3 px-md-5" style="max-width: 600px; text-align: center;">
+            Discover a wide range of premium skincare products designed to rejuvenate, protect, and enhance your natural
+            beauty. From cleansers to serums, find the perfect solution for your skin's unique needs.
+          </p>
+          <a href="shop.php" class="btn btn-light rounded-pill px-4 py-2 mt-2">Explore our Products</a>
         </div>
-      </div>
+      </section>
+
       <!-- single banner end -->
 
       <!-- instagram start -->
@@ -524,9 +463,10 @@ session_start();
                     fill="#00234D" />
                 </svg>
               </div>
-              <h2 class="section-heading">Shoe products</h2>
+              <h2 class="section-heading">Our Services</h2>
               <p class="section-subheading">
-                See how our customers styled shoe products in their foot
+                Explore our range of expert skincare and body treatments. Book an appointment today to experience
+                personalized care.
               </p>
             </div>
             <div class="instagram-container position-relative mt-48">
@@ -553,32 +493,32 @@ session_start();
                 <div class="instagram-slick-item" data-aos="fade-up" data-aos-duration="700">
                   <div class="instagram-card">
                     <a class="instagram-img-wrapper">
-                      <img src="assets/img/instagram/s5.jpg" alt="img" class="instagram-card-img rounded"
-                        style="height: 350px; width: 100%; object-fit: cover; " />
+                      <img src="assets/images/web/05.webp" alt="img" class="instagram-card-img rounded"
+                        style="aspect-ratio: 3/4; width: 100%; object-fit: cover; " />
                     </a>
                   </div>
                 </div>
                 <div class="instagram-slick-item" data-aos="fade-up" data-aos-duration="700">
                   <div class="instagram-card">
                     <a class="instagram-img-wrapper">
-                      <img src="assets/img/instagram/s6.jpg" alt="img" class="instagram-card-img rounded"
-                        style="height: 350px; width: 100%; object-fit: cover; " />
+                      <img src="assets/images/web/07.webp" alt="img" class="instagram-card-img rounded"
+                        style="aspect-ratio: 3/4; width: 100%; object-fit: cover; " />
                     </a>
                   </div>
                 </div>
                 <div class="instagram-slick-item" data-aos="fade-up" data-aos-duration="700">
                   <div class="instagram-card">
                     <a class="instagram-img-wrapper">
-                      <img src="assets/img/instagram/s7.jpg" alt="img" class="instagram-card-img rounded"
-                        style="height: 350px; width: 100%; object-fit: cover; " />
+                      <img src="assets/images/web/09.webp" alt="img" class="instagram-card-img rounded"
+                        style="aspect-ratio: 3/4; width: 100%; object-fit: cover; " />
                     </a>
                   </div>
                 </div>
                 <div class="instagram-slick-item" data-aos="fade-up" data-aos-duration="700">
                   <div class="instagram-card">
                     <a class="instagram-img-wrapper">
-                      <img src="assets/img/instagram/s8.jpg" alt="img" class="instagram-card-img rounded"
-                        style="height: 350px; width: 100%; object-fit: cover; " />
+                      <img src="assets/images/web/11.webp" alt="img" class="instagram-card-img rounded"
+                        style="aspect-ratio: 3/4; width: 100%; object-fit: cover; " />
                     </a>
                   </div>
                 </div>
@@ -586,15 +526,15 @@ session_start();
                   <div class="instagram-card">
                     <a class="instagram-img-wrapper">
                       <img src="assets/img/instagram/s9.jpg" alt="img" class="instagram-card-img rounded"
-                        style="height: 350px; width: 100%; object-fit: cover; " />
+                        style="aspect-ratio: 3/4; width: 100%; object-fit: cover; " />
                     </a>
                   </div>
                 </div>
                 <div class="instagram-slick-item" data-aos="fade-up" data-aos-duration="700">
                   <div class="instagram-card">
                     <a class="instagram-img-wrapper">
-                      <img src="assets/img/instagram/s10.jpg" alt="img" class="instagram-card-img rounded"
-                        style="height: 350px; width: 100%; object-fit: cover; " />
+                      <img src="assets/images/web/13.webp" alt="img" class="instagram-card-img rounded"
+                        style="aspect-ratio: 3/4; width: 100%; object-fit: cover; " />
                     </a>
                   </div>
                 </div>
@@ -612,8 +552,8 @@ session_start();
         </div>
       </div>
       <div class="text-center mt-5">
-        <p class="fs-5">Contact us for your <b>special order</b> or <b>customized footwear</b> </p>
-        <a href="#" class="btn btn-primary">Get in touch ⟫ </a>
+        <p class="fs-5">Book an <b>appointment</b> today </p>
+        <a href="booking.php" class="btn btn-primary">Book Apointment &rarr; </a>
       </div>
       <!-- instagram end -->
 

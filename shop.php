@@ -196,13 +196,13 @@ if (isset($_GET["s"])) {
                                                         </h3>
                                                         <?php if ($products["discount"] > 0): ?>
                                                             <div class="product-card-price">
-                                                                <span class="card-price-regular">$<?= $discount; ?></span>
+                                                                <span class="card-price-regular">₦<?= $discount; ?></span>
                                                                 <span
-                                                                    class="card-price-compare text-decoration-line-through">$<?= $products["price"]; ?></span>
+                                                                    class="card-price-compare text-decoration-line-through">₦<?= $products["price"]; ?></span>
                                                             </div>
                                                         <?php else: ?>
                                                             <div class="product-card-price">
-                                                                <span class="card-price-regular">$<?= $products["price"]; ?></span>
+                                                                <span class="card-price-regular">₦<?= $products["price"]; ?></span>
                                                             </div>
                                                         <?php endif; ?>
                                                     </div>

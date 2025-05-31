@@ -8,8 +8,8 @@ if (!isset($_SESSION["user"])) {
     $userid = $_SESSION["user"]["userid"];
 }
 
-$getOrders = mysqli_query($conn, "SELECT * FROM `orders` WHERE `userid` = '$userid' ORDER BY `id` DESC");
-$orders = mysqli_fetch_all($getOrders, true);
+$getAppointment = mysqli_query($conn, "SELECT a.*, s.title FROM `appointments` as a LEFT JOIN `services` as s ON a.service_id = s.id WHERE a.userid = '$userid' ORDER BY a.id DESC");
+$bookings = mysqli_fetch_all($getAppointment, true);
 //dd($orders);
 ?>
 <!doctype html>
@@ -120,54 +120,41 @@ $orders = mysqli_fetch_all($getOrders, true);
             <div class="cart-page mt-100">
                 <div class="container">
                     <div class="section-header mb-3">
-                        <h2 class="section-heading">My Orders</h2>
+                        <h2 class="section-heading">My Appointments</h2>
                     </div>
-                    <div class="card py-3 px-3">
-                        <div class="card-body">
-                            <?php
-                            foreach ($orders as $order) {
-                                $items = json_decode($order["items"], true);
-
-                                ?>
-                                <div
-                                    class="d-flex justify-content-between align-items-center py-2 border-bottom table-responsive">
-
-                                    <div class="info">
-                                        <h5><a href="view-order.php?oid=<?= $order['orderid']; ?>"
-                                                class="text-secondary">#<?= $order["orderid"]; ?></a></h5>
-                                        <small
-                                            class="mb-3 text-secondary"><?= date("d M, Y H:i", strtotime($order["created_at"])); ?></small>
-                                        <div class="text-truncate">
-                                            <p class="">
-                                                <?php
-                                                for ($i = 0; $i < count($items); $i++) {
-                                                    $productid = $items[$i]["productid"];
-                                                    $getProduct = mysqli_query($conn, "SELECT * FROM `products` WHERE `productid` = '$productid'");
-                                                    $product = mysqli_fetch_assoc($getProduct);
-                                                    if ($items[$i] == $items[count($items) - 1]) {
-                                                        echo $items[$i]["quantity"] . " " . $product["name"];
-                                                    } else {
-                                                        echo $items[$i]["quantity"] . " " . $product["name"] . ", ";
-                                                    }
-
-                                                }
-                                                //
-                                                ?>
-                                            </p>
-                                        </div>
-
-                                        <small class="text-warning"><?= $order["status"]; ?></small>
-                                    </div>
-                                    <div class="action px-3">
-                                        <h5><a href="view-order.php?oid=<?= $order['orderid']; ?>" class="text-dark">⟫</a>
-                                        </h5>
-                                    </div>
-                                </div>
+                    <div class="table-responsive">
+                        <table class="table table-all">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Time</th>
+                                    <th scope="col">Service</th>
+                                    <th scope="col">Amount</th>
+                                    <th scope="col">Location</th>
+                                    <th scope="col">Created At</th>
+                                </tr>
+                            </thead>
+                            <tbody>
                                 <?php
-                            }
-                            ?>
-                        </div>
+                                if (isset($bookings) && is_array($bookings)) {
+                                    foreach ($bookings as $booking) {
+                                        ?>
+                                        <tr>
+                                            <td><?= date("d M, Y", strtotime($booking["date"])) ?></td>
+                                            <td><?= $booking["time"] ?></td>
+                                            <td><?= $booking["title"] ?></td>
+                                            <td>₦<?= number_format($booking["price"]) ?></td>
+                                            <td><?= $booking["location"] ?></td>
+                                            <td><?= date("d M, Y", strtotime($booking["created_at"])) ?></td>
+                                        </tr>
+                                        <?php
+                                    }
+                                }
+                                ?>
+                            </tbody>
+                        </table>
                     </div>
+
                 </div>
             </div>
         </main>
