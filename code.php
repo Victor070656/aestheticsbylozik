@@ -25,7 +25,7 @@ if (mysqli_num_rows($getUser) > 0) {
 <meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 
 <head>
-    <title>Helenz || Code</title>
+    <title>Aesthetics By Lozik || Code</title>
     <!-- meta tags -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

@@ -46,7 +46,7 @@ $paymentamount = (float) $product["price"] + $shipping;
 <meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 
 <head>
-    <title>Helenz | Product Detail</title>
+    <title>Aesthetics By Lozik | Product Detail</title>
     <!-- meta tags -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -147,7 +147,8 @@ $paymentamount = (float) $product["price"] + $shipping;
                     <div class="row">
                         <div class="col-lg-6 col-md-12 col-12">
                             <div class="product-gallery product-gallery-vertical d-flex">
-                                <img src="uploads/<?= $product["image"]; ?>" alt="" class="img-fluid w-100" style="border-radius: 15px;">
+                                <img src="uploads/<?= $product["image"]; ?>" alt="" class="img-fluid w-100"
+                                    style="border-radius: 15px;">
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12 col-12" style="align-self: center;">

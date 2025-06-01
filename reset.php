@@ -24,7 +24,7 @@ if (mysqli_num_rows($getUser) > 0) {
 
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-    <title>Helenz || Reset Password</title>
+    <title>Aesthetics By Lozik || Reset Password</title>
     <!-- meta tags -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

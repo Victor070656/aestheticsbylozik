@@ -60,7 +60,7 @@ function sendMail($email, $subject, $body, $success = "Message has been sent")
         echo "<script>alert('$success')</script>";
         return true;
     } catch (Exception $e) {
-        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         return false;
     }
 

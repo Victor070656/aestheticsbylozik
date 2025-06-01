@@ -1,4 +1,4 @@
-# helenz-ecommerce
+# Aesthetics By Lozik-ecommerce
 
 single category ecommerce app with php
 

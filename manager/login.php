@@ -1,4 +1,4 @@
-<?php 
+<?php
 include_once "../config.php";
 session_start();
 ?>
@@ -16,7 +16,7 @@ session_start();
   <!-- The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
   <!-- Title -->
-  <title>Circl - Responsive Admin Dashboard Template</title>
+  <title>Aesthetics By Lozik Admin || Login</title>
 
   <!-- Styles -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,800&amp;display=swap" rel="stylesheet" />

@@ -72,7 +72,7 @@ if (isset($_GET["trxref"])) {
           <p>Hello there,</p>
           <p>An Order was just placed now - Payment Reference: #' . $ref . '</p>
           <p>To view the order details, please visit your dashboard</p>
-          <a href="http://localhost/abl/manager" class="button"
+          <a href="https://aestheticsbylozik.com/manager" class="button"
             >Go To Dashboard</a
           >
         </div>
@@ -115,7 +115,7 @@ $amount = (float) round($info["amount"]);
 
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
-    <title>Helenz || Pay</title>
+    <title>Aesthetics By Lozik || Pay</title>
     <!-- meta tags -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

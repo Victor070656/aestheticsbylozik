@@ -78,7 +78,7 @@ if (isset($_GET["trxref"])) {
       </p>
       <p><b>Email:</b> ' . $email . ' & <b>Phone number:</b> ' . $phone . '</p>
       <p>To view the appointment details, please visit your dashboard</p>
-      <a href="http://localhost/abl/manager" class="button"
+      <a href="https://aestheticsbylozik.com/manager" class="button"
         >Go To Dashboard</a
       >
     </div>

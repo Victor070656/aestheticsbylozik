@@ -35,12 +35,12 @@ foreach ($items as $item) {
     $discount += $d;
     $total += $product["price"];
 }
-if ($total <= 1000) {
-    $shipping = $total * 0.1;
+if ($total <= 20000) {
+    $shipping = 1500;
 } elseif ($total <= 5000) {
-    $shipping = $total * 0.15;
+    $shipping = 2500;
 } else {
-    $shipping = $total * 0.25;
+    $shipping = 5000;
 }
 $topay = $subtotal + $shipping;
 
@@ -54,7 +54,7 @@ $topay = $subtotal + $shipping;
 <meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 
 <head>
-    <title>Helenz || Checkout</title>
+    <title>Aesthetics By Lozik || Checkout</title>
     <!-- meta tags -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

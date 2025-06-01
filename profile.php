@@ -21,7 +21,7 @@ $user = mysqli_fetch_array($getUser);
 
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
-    <title>Helenz || User Profile</title>
+    <title>Aesthetics By Lozik || User Profile</title>
     <!-- meta tags -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

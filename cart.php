@@ -24,7 +24,7 @@ if (mysqli_num_rows($checkCart) > 0) {
 
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
-    <title>Helenz | Cart</title>
+    <title>Aesthetics By Lozik | Cart</title>
     <!-- meta tags -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -185,12 +185,12 @@ if (mysqli_num_rows($checkCart) > 0) {
                                                 <?php
                                             }
 
-                                            if ($total <= 1000) {
-                                                $shipping = $total * 0.1;
+                                            if ($total <= 20000) {
+                                                $shipping = 1500;
                                             } elseif ($total <= 5000) {
-                                                $shipping = $total * 0.15;
+                                                $shipping = 2500;
                                             } else {
-                                                $shipping = $total * 0.25;
+                                                $shipping = 5000;
                                             }
                                             $payment_total = $subtotal + $shipping;
                                             ?>
