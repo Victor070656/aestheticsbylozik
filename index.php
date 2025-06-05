@@ -13,7 +13,10 @@ session_start();
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="meta description" />
+  <meta name="keywords"
+    content="Aesthetics, Aestheticsbylozik, Skincare, Skincare Products, Body Treatments, Cosmetic Solutions, Cosmetics, Beauty, Confidence" />
+  <meta name="description"
+    content="Welcome to Aestheticsbylozik. Here, we combine expert skincare, body treatments, and cosmetic solutions to help you look good, feel better, and own your glow — because beauty starts with confidence." />
   <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
   <!-- fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com/" />
@@ -74,6 +77,96 @@ session_start();
       background-repeat: no-repeat;
       background-size: cover;
     }
+
+    .client-experiences {
+      background-color: #e8f4f8;
+      padding: 60px 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .section-title {
+      color: #2c7a7b;
+      font-size: 2.5rem;
+      font-weight: 300;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .section-subtitle {
+      color: #666;
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 1rem;
+    }
+
+    .treatment-gallery {
+      margin-bottom: 50px;
+    }
+
+    .treatment-item {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .treatment-image {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: linear-gradient(45deg, #d4a574, #c9956b);
+    }
+
+    .treatment-label {
+      color: #2c7a7b;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .testimonial-card {
+      background: white;
+      border: 2px solid #b8d4d6;
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 20px;
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .quote-mark {
+      color: #2c7a7b;
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .testimonial-text {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      flex-grow: 1;
+    }
+
+    .client-name {
+      color: #2c7a7b;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-align: right;
+    }
+
+    .view-more {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .view-more a {
+      color: #2c7a7b;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
   </style>
 
   <link rel="stylesheet" href="assets/css/vendor.css" />
@@ -114,27 +207,28 @@ session_start();
               <div class="row h-100 align-items-center">
                 <div class="col-md-6 py-5">
                   <div class="content-box slide-content py-4">
+                    <span class="animate__animated animate__fadeInUp mb-3 text-uppercase"
+                      data-animation="animate__animated animate__fadeInUp">Heal | relax | rejuvenate</span>
                     <h2 class="slide-heading heading_48 animate__animated animate__fadeInUp mb-3"
                       data-animation="animate__animated animate__fadeInUp">
                       Welcome To <br> Aesthetics By Lozik
                     </h2>
                     <p class="slide-subheading heading_18 animate__animated animate__fadeInUp"
                       data-animation="animate__animated animate__fadeInUp lh-base">
-                      Expert skincare, body treatments, and cosmetic solutions to help you look good, feel confident,
-                      and
-                      own your glow.
+                      Here, we combine expert skincare, body treatments, and cosmetic solutions to help you look good,
+                      feel better, and own your glow—because beauty starts with confidence.
                     </p>
-                    <a class="btn-primary slide-btn animate__animated animate__fadeInUp" href="shop.php"
+                    <a class="btn btn-success mt-0 slide-btn animate__animated animate__fadeInUp" href="shop.php"
                       data-animation="animate__animated animate__fadeInUp">SHOP
                       NOW</a>
-                    <a class="btn btn-outline-danger  animate__animated animate__fadeInUp" href="booking.php"
+                    <a class="btn btn-outline-success  animate__animated animate__fadeInUp" href="booking.php"
                       data-animation="animate__animated animate__fadeInUp">Book
                       Appointment</a>
                   </div>
 
                 </div>
                 <div class="col-md-6">
-                  <img class="img-fluid w-75 mx-auto" src="assets/images/banner/02_.jpeg" alt="slide-1"
+                  <img class="img-fluid w-75 mx-auto shadow" src="assets/images/web/banner.png" alt="slide-1"
                     style="border-radius: 15px;" />
                 </div>
               </div>
@@ -153,9 +247,9 @@ session_start();
                       data-animation="animate__animated animate__fadeInUp lh-base">
                       Experience advanced skin solutions tailored to your unique needs.
                     </p>
-                    <a class="btn-primary slide-btn animate__animated animate__fadeInUp" href="shop.php"
+                    <a class="btn btn-success mt-0 slide-btn animate__animated animate__fadeInUp" href="shop.php"
                       data-animation="animate__animated animate__fadeInUp">Explore Our Products</a>
-                    <a class="btn btn-outline-danger  animate__animated animate__fadeInUp" href="booking.php"
+                    <a class="btn btn-outline-success  animate__animated animate__fadeInUp" href="booking.php"
                       data-animation="animate__animated animate__fadeInUp">Book
                       Appointment</a>
                   </div>
@@ -181,10 +275,10 @@ session_start();
                       data-animation="animate__animated animate__fadeInUp lh-base">
                       After 10 years of struggling, I got my beauty back in 3 months
                     </p>
-                    <a class="btn-primary slide-btn animate__animated animate__fadeInUp" href="shop.php"
+                    <a class="btn btn-success mt-0 slide-btn animate__animated animate__fadeInUp" href="shop.php"
                       data-animation="animate__animated animate__fadeInUp">SHOP
                       NOW</a>
-                    <a class="btn btn-outline-danger  animate__animated animate__fadeInUp" href="booking.php"
+                    <a class="btn btn-outline-success  animate__animated animate__fadeInUp" href="booking.php"
                       data-animation="animate__animated animate__fadeInUp">Book
                       Appointment</a>
                   </div>
@@ -205,6 +299,73 @@ session_start();
         <div class="activate-dots dot-tools"></div>
       </div>
       <!-- slideshow end -->
+
+      <section class="py-5 bg-white">
+        <div class="container">
+
+          <div class="text-center mb-5">
+            <h2 class="fw-bold text-success">Why Choose Us</h2>
+            <p class="text-muted fs-5">Discover the benefits of our services designed to heal, relax, and rejuvenate
+              your body and soul.</p>
+          </div>
+
+          <div class="row text-center g-4">
+            <!-- Heal -->
+            <div class="col-md-4">
+              <div class="p-4 border rounded h-100 shadow-sm">
+                <div class="mb-3">
+                  <img src="assets/images/web/heal.png" alt="Heal Icon" class="img-fluid" style="height: 80px;">
+                </div>
+                <h5 class="fw-bold text-dark mb-2">Heal</h5>
+                <p class="text-muted">Restore your skin and body with expert treatments designed to address concerns
+                  like acne, scars, and aging signs, promoting overall wellness.</p>
+              </div>
+            </div>
+
+            <!-- Relax -->
+            <div class="col-md-4">
+              <div class="p-4 border rounded h-100 shadow-sm">
+                <div class="mb-3">
+                  <img src="assets/images/web/relax.png" alt="Relax Icon" class="img-fluid" style="height: 80px;">
+                </div>
+                <h5 class="fw-bold text-dark mb-2">Relax</h5>
+                <p class="text-muted">Experience deep relaxation through soothing massages, facials, and body treatments
+                  that melt away stress and tension.</p>
+              </div>
+            </div>
+
+            <!-- Rejuvenate -->
+            <div class="col-md-4">
+              <div class="p-4 border rounded h-100 shadow-sm">
+                <div class="mb-3">
+                  <img src="assets/images/web/rejuvenate.png" alt="Rejuvenate Icon" class="img-fluid"
+                    style="height: 80px;">
+                </div>
+                <h5 class="fw-bold text-dark mb-2">Rejuvenate</h5>
+                <p class="text-muted">Revitalize your skin and body with advanced aesthetic procedures that enhance your
+                  natural beauty and leave you feeling refreshed.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container py-5 ">
+        <div class="row align-items-center mb-2">
+          <div class="col-md-5 mb-4 mb-md-0">
+            <img src="assets/images/web/image.png" alt="Signature Aesthetic Lounge"
+              style="border-radius: 15px; aspect-ratio: 1/1; object-fit: cover;" class="img-fluid shadow ">
+          </div>
+          <div class="col-md-7 text-md-start text-center">
+            <h2 class="fw-bold text-success mb-3">Elevate Your Glow at Our Signature Aesthetic Lounge</h2>
+            <p class="text-muted fs-5">At Aestheticsbylozik, we begin your journey to radiant skin with a personalized
+              consultation—virtual or in-person. Our experts assess your skin type, concerns, and sensitivities to
+              tailor the best treatments for you. Whether you’re dealing with breakouts or refining your skincare
+              routine, we provide expert guidance to help you achieve your skin goals. Book your consultation today!</p>
+          </div>
+        </div>
+      </section>
+
 
       <!-- trusted badge start -->
       <div class="trusted-section mt-100 overflow-hidden">
@@ -262,86 +423,7 @@ session_start();
       </div>
       <!-- trusted badge end -->
 
-      <section class="container py-5  mt-100">
-        <div class="row align-items-center">
-          <!-- Left Content -->
-          <div class="col-md-6 mb-4 mb-md-0">
-            <h1 class="fw-bold display-5">Discover the Secret Healthy, Radiant Skin</h1>
-            <p class="lead text-muted">
-              Our formulas combine the best of nature with cutting-edge science. Packed with all-natural botanicals as
-              well as clinically proven actives, each product helps your skin glow.
-            </p>
-            <div class="d-flex gap-3 my-4">
-              <a href="#" class="btn btn-warning btn-sm rounded-pill px-4">Shop Now</a>
-              <a href="#" class="btn btn-outline-secondary btn-sm rounded-pill px-4">Book Appointment</a>
-            </div>
-            <div class="d-flex align-items-center gap-3">
-              <!-- Avatars -->
-              <div class="d-flex">
-                <img src="https://i.pravatar.cc/40?img=1" class="rounded-circle border border-white me-n2" width="40"
-                  height="40" alt="">
-                <img src="https://i.pravatar.cc/40?img=2" class="rounded-circle border border-white me-n2" width="40"
-                  height="40" alt="">
-                <img src="https://i.pravatar.cc/40?img=3" class="rounded-circle border border-white" width="40"
-                  height="40" alt="">
-              </div>
-              <p class="mb-0 text-muted small">
-                People love our natural ingredients—proven by nature, proven by science.
-              </p>
-            </div>
-          </div>
 
-          <!-- Right Image -->
-          <div class="col-md-6 position-relative">
-            <div class="position-relative overflow-hidden rounded-4 shadow">
-              <img src="assets/images/web/12.webp" alt="Skincare model" class="img-fluid rounded-4 w-100">
-              <!-- Rotated text -->
-              <div class="position-absolute top-0 end-0 bg-warning text-white fw-bold py-2 px-3"
-                style="transform: rotate(90deg) translate(0, -100%); transform-origin: top right; white-space: nowrap;">
-                GLOW TO YOUR SKIN. GLOW TO YOUR SKIN. GLOW TO YOUR SKIN.
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      <!-- banner start -->
-      <section class="bg-light mt-100 py-5">
-        <div class="container">
-          <div class="row align-items-center">
-            <!-- Left Image -->
-            <div class="col-md-6 mb-4 mb-md-0">
-              <img src="assets/images/web/03.webp" alt="Architectural Structure"
-                class="img-fluid rounded-start-4 w-100 shadow-sm">
-            </div>
-
-            <!-- Right Text -->
-            <div class="col-md-6">
-              <h5 class="text-success fw-bold mb-3">Who we are?</h5>
-              <p class="text-muted">
-                Aesthetics By Lozik is more than just a brand; it is a commitment to the art and science of beauty and
-                self-care. We are passionate about helping individuals achieve their best selves through expert
-                skincare, body treatments, and cosmetic solutions that are tailored to meet diverse needs. Our approach
-                combines cutting-edge technology with the finest natural ingredients, ensuring that every product and
-                service we offer is safe, effective, and personalized.
-
-                At Aesthetics By Lozik, we believe that beauty is not just skin deep—it is a reflection of confidence,
-                self-love, and empowerment. Our mission is to inspire and enable you to embrace your unique beauty, own
-                your glow, and step into the world with confidence. Whether you are looking to rejuvenate your skin,
-                enhance your natural features, or simply indulge in self-care, we are here to provide solutions that are
-                as unique as you are.
-
-                From advanced skincare formulations to transformative body treatments, every aspect of our offerings is
-                designed with your well-being in mind. We are dedicated to creating a space where beauty meets
-                innovation, and where you can trust that your needs are our priority. Join us on this journey to
-                discover the secret to healthy, radiant skin and a confident, glowing you. Aesthetics By Lozik—where
-                beauty meets excellence.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <!-- banner end -->
 
@@ -426,11 +508,162 @@ session_start();
             ?>
           </div>
           <div class="view-all text-center" data-aos="fade-up" data-aos-duration="700">
-            <a class="btn-primary" href="shop.php">VIEW ALL</a>
+            <a class="btn btn-success" href="shop.php">VIEW ALL</a>
           </div>
         </div>
       </div>
       <!-- featured collection end -->
+
+      <!-- Services Section -->
+      <section class="py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+        <div class="container">
+          <!-- Section Header -->
+          <div class="row">
+            <div class="col-12 text-center mb-5">
+              <h2 class="display-5 fw-bold text-success mb-4 position-relative">
+                The best of our services
+                <span class="position-absolute start-50 translate-middle-x"
+                  style="bottom: -15px; width: 60px; height: 4px; background: #f8a91a; border-radius: 2px;"></span>
+              </h2>
+              <p class="lead text-muted mb-4" style="max-width: 600px; margin: 0 auto;">
+                At AestheticsbyLock, we offer a range of advanced aesthetic treatments designed to enhance your natural
+                beauty and well-being.
+              </p>
+              <!-- Certification Badge -->
+              <div class="">
+                <div class="col-md-6 mx-auto">
+                  <img src="assets/images/services/Cpd-certified-Success-Lozik-e1742856338455-1.png" alt=""
+                    class="w-100 shadow">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Services Grid -->
+          <div class="row g-4">
+            <!-- Service 1 -->
+            <div class="col-lg-6">
+              <div class="card h-100 border-0 shadow-sm" style="border-radius: 20px;">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <div
+                      class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-3"
+                      style="width: 50px; height: 50px;">
+                      <span class="fw-bold">01</span>
+                    </div>
+                    <div class="bg-light rounded-3 p-3 flex-grow-1 text-center">
+                      <i class="fas fa-spa text-success" style="font-size: 2rem;"></i>
+                    </div>
+                  </div>
+                  <h4 class="text-success fw-semibold mb-3">Facials and Chemical Peels for radiant skin</h4>
+                  <p class="text-muted mb-0">Our customized facial treatments are designed to target specific skin
+                    concerns—whether acne, aging, hyperpigmentation, uneven skin tone, or dullness, refreshed and
+                    radiant.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="col-lg-6">
+              <div class="card h-100 border-0 shadow-sm" style="border-radius: 20px;">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <div
+                      class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-3"
+                      style="width: 50px; height: 50px;">
+                      <span class="fw-bold">02</span>
+                    </div>
+                    <div class="bg-light rounded-3 p-3 flex-grow-1 text-center">
+                      <i class="fas fa-hands text-success" style="font-size: 2rem;"></i>
+                    </div>
+                  </div>
+                  <h4 class="text-success fw-semibold mb-3">Soothing Massages for relaxation and rejuvenation</h4>
+                  <p class="text-muted mb-0">Experience total relaxation with our range of massage therapies designed to
+                    melt away stress, ease muscle tension, and promote blood circulation.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="col-lg-6">
+              <div class="card h-100 border-0 shadow-sm" style="border-radius: 20px;">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <div
+                      class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-3"
+                      style="width: 50px; height: 50px;">
+                      <span class="fw-bold">03</span>
+                    </div>
+                    <div class="bg-light rounded-3 p-3 flex-grow-1 text-center">
+                      <i class="fas fa-leaf text-success" style="font-size: 2rem;"></i>
+                    </div>
+                  </div>
+                  <h4 class="text-success fw-semibold mb-3">Body Treatments for pampering and skin renewal</h4>
+                  <p class="text-muted mb-0">Pamper your body with treatments designed to exfoliate dead skin cells,
+                    improve skin tone, and leave your skin feeling silky smooth.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="col-lg-6">
+              <div class="card h-100 border-0 shadow-sm" style="border-radius: 20px;">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <div
+                      class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-3"
+                      style="width: 50px; height: 50px;">
+                      <span class="fw-bold">04</span>
+                    </div>
+                    <div class="bg-light rounded-3 p-3 flex-grow-1 text-center">
+                      <i class="fas fa-magic text-success" style="font-size: 2rem;"></i>
+                    </div>
+                  </div>
+                  <h4 class="text-success fw-semibold mb-3">Keloid Removal and Laser Treatments for skin correction</h4>
+                  <p class="text-muted mb-0">Struggling with stubborn keloids or unwanted skin imperfections? Our
+                    non-invasive keloid removal techniques and advanced laser treatments are designed to correct skin
+                    irregularities safely and effectively.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="col-lg-6">
+              <div class="card h-100 border-0 shadow-sm" style="border-radius: 20px;">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <div
+                      class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-3"
+                      style="width: 50px; height: 50px;">
+                      <span class="fw-bold">05</span>
+                    </div>
+                    <div class="bg-light rounded-3 p-3 flex-grow-1 text-center">
+                      <i class="fas fa-syringe text-success" style="font-size: 2rem;"></i>
+                    </div>
+                  </div>
+                  <h4 class="text-success fw-semibold mb-3">Botox and Fillers for anti-aging and facial enhancement</h4>
+                  <p class="text-muted mb-0">Smooth out wrinkles, restore lost volume, and redefine your features with
+                    our Botox and dermal filler treatments. Performed by skilled professionals, these procedures enhance
+                    your facial features while maintaining a natural, youthful look—no overdone appearance here.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- CTA Card -->
+            <div class="col-lg-6">
+              <div class="card h-100 border-0 shadow-sm bg-success text-white" style="border-radius: 20px;">
+                <div class="card-body p-4 d-flex flex-column justify-content-center align-items-center text-center">
+                  <i class="fas fa-calendar-alt mb-3" style="font-size: 3rem; opacity: 0.8;"></i>
+                  <h4 class="fw-semibold text-white mb-3">Ready to Transform Your Look?</h4>
+                  <p class="mb-4 opacity-75">Book your consultation today and discover the perfect treatment for your
+                    unique needs.</p>
+                  <a href="#" class="btn btn-light btn-sm px-4 py-2 fw-semibold">BOOK APPOINTMENT</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- single banner start -->
       <section class="position-relative text-center mt-100 text-white"
@@ -450,6 +683,78 @@ session_start();
       </section>
 
       <!-- single banner end -->
+
+      <section class="client-experiences">
+        <div class="container">
+          <h2 class="section-title fw-bold">Client Experiences</h2>
+          <p class="section-subtitle">Real Experiences. Real Results.</p>
+
+          <!-- Treatment Gallery -->
+          <div class="treatment-gallery">
+            <div class="row">
+              <div class="col-6 col-md-3">
+                <div class="treatment-item">
+                  <img class="treatment-image" src="assets/images/web/exp3.png">
+                  <div class="treatment-label">Non-surgical rhinoplasty</div>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="treatment-item">
+                  <img class="treatment-image" src="assets/images/web/exp1.png">
+                  <div class="treatment-label">Dermal fillers (liquid bbl)</div>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="treatment-item">
+                  <img class="treatment-image" src="assets/images/web/exp4.png">
+                  <div class="treatment-label">Acne Treatment</div>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="treatment-item">
+                  <img class="treatment-image" src="assets/images/web/exp2.png">
+                  <div class="treatment-label">Post acne scar</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonials -->
+          <div class="row">
+            <div class="col-lg-4 col-md-6">
+              <div class="testimonial-card">
+                <div class="quote-mark">"</div>
+                <div class="testimonial-text">
+                  Aesthetically looks completely transformed my skin. My face is clearer, brighter, and I feel more
+                  confident. Their team is professional and super attentive!
+                </div>
+                <div class="client-name">- Christina K.</div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="testimonial-card">
+                <div class="quote-mark">"</div>
+                <div class="testimonial-text">
+                  Their facials are top-notch! I always leave feeling refreshed and glowing. Best skincare center in
+                  Owerri, hands down.
+                </div>
+                <div class="client-name">- Chioba A.</div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="testimonial-card">
+                <div class="quote-mark">"</div>
+                <div class="testimonial-text">
+                  I struggled with keloids for years until I found them. The keloid treatment was gentle and the results
+                  are amazing. Highly recommend!
+                </div>
+                <div class="client-name">- Adah N.</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
 
       <!-- instagram start -->
       <div class="instagram-section mt-100 overflow-hidden home-section">
@@ -493,7 +798,7 @@ session_start();
                 <div class="instagram-slick-item" data-aos="fade-up" data-aos-duration="700">
                   <div class="instagram-card">
                     <a class="instagram-img-wrapper">
-                      <img src="assets/images/web/05.webp" alt="img" class="instagram-card-img rounded"
+                      <img src="assets/images/services/Facials-1-1.jpg" alt="img" class="instagram-card-img rounded"
                         style="aspect-ratio: 3/4; width: 100%; object-fit: cover; " />
                     </a>
                   </div>
@@ -501,7 +806,8 @@ session_start();
                 <div class="instagram-slick-item" data-aos="fade-up" data-aos-duration="700">
                   <div class="instagram-card">
                     <a class="instagram-img-wrapper">
-                      <img src="assets/images/web/07.webp" alt="img" class="instagram-card-img rounded"
+                      <img src="assets/images/services/Laser-Tattoo-Removal-1.jpg" alt="img"
+                        class="instagram-card-img rounded"
                         style="aspect-ratio: 3/4; width: 100%; object-fit: cover; " />
                     </a>
                   </div>
@@ -509,7 +815,8 @@ session_start();
                 <div class="instagram-slick-item" data-aos="fade-up" data-aos-duration="700">
                   <div class="instagram-card">
                     <a class="instagram-img-wrapper">
-                      <img src="assets/images/web/09.webp" alt="img" class="instagram-card-img rounded"
+                      <img src="assets/images/services/Cosmetic-fillers-1-1.jpg" alt="img"
+                        class="instagram-card-img rounded"
                         style="aspect-ratio: 3/4; width: 100%; object-fit: cover; " />
                     </a>
                   </div>
@@ -517,7 +824,8 @@ session_start();
                 <div class="instagram-slick-item" data-aos="fade-up" data-aos-duration="700">
                   <div class="instagram-card">
                     <a class="instagram-img-wrapper">
-                      <img src="assets/images/web/11.webp" alt="img" class="instagram-card-img rounded"
+                      <img src="assets/images/services/Mesotherapy-2-1-1.jpg" alt="img"
+                        class="instagram-card-img rounded"
                         style="aspect-ratio: 3/4; width: 100%; object-fit: cover; " />
                     </a>
                   </div>
@@ -525,7 +833,8 @@ session_start();
                 <div class="instagram-slick-item" data-aos="fade-up" data-aos-duration="700">
                   <div class="instagram-card">
                     <a class="instagram-img-wrapper">
-                      <img src="assets/img/instagram/s9.jpg" alt="img" class="instagram-card-img rounded"
+                      <img src="assets/images/services/Microneedling-1-1.jpg" alt="img"
+                        class="instagram-card-img rounded"
                         style="aspect-ratio: 3/4; width: 100%; object-fit: cover; " />
                     </a>
                   </div>
@@ -533,7 +842,7 @@ session_start();
                 <div class="instagram-slick-item" data-aos="fade-up" data-aos-duration="700">
                   <div class="instagram-card">
                     <a class="instagram-img-wrapper">
-                      <img src="assets/images/web/13.webp" alt="img" class="instagram-card-img rounded"
+                      <img src="assets/images/services/IMG_0895-1.jpg" alt="img" class="instagram-card-img rounded"
                         style="aspect-ratio: 3/4; width: 100%; object-fit: cover; " />
                     </a>
                   </div>
@@ -553,12 +862,12 @@ session_start();
       </div>
       <div class="text-center mt-5">
         <p class="fs-5">Book an <b>appointment</b> today </p>
-        <a href="booking.php" class="btn btn-primary">Book Apointment &rarr; </a>
+        <a href="booking.php" class="btn btn-success">Book Apointment &rarr; </a>
       </div>
       <!-- instagram end -->
 
       <!-- newsletter start -->
-      <div class="newsletter-section mt-100 overflow-hidden">
+      <!-- <div class="newsletter-section mt-100 overflow-hidden">
         <div class="newsletter-inner">
           <div class="position-relative">
             <img class="single-banner-img" src="assets/img/newsletter/2.jpg" alt="slide-1" />
@@ -595,7 +904,7 @@ session_start();
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <!-- newsletter end -->
 
 

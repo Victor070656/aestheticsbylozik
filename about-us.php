@@ -16,7 +16,7 @@ session_start();
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="meta description">
+    <meta name="description" content="Aesthetics By Lozik">
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -125,32 +125,35 @@ session_start();
                 <section class="container py-5">
                     <div class="row align-items-center">
                         <div class="col-md-6 text-center">
-                            <img src="assets/images/web/06.webp" alt="About Aesthetics by Lozik"
-                                class="img-fluid rounded-4">
+                            <img src="assets/images/web/image.png" alt="About Aesthetics by Lozik"
+                                class="img-fluid rounded-4" style="border-radius: 15px;">
                         </div>
                         <div class="col-md-6 mt-3 mt-md-0">
-                            <h6 class="text-danger text-uppercase">About Aesthetics by Lozik</h6>
-                            <h2 class="fw-bold">Empowering Beauty with Premium Products & Services</h2>
-                            <p class="text-muted">Aesthetics by Lozik is dedicated to enhancing natural beauty through a
-                                curated selection of high-quality cosmetics and beauty products. Our mission is to
-                                empower individuals to look and feel their best.</p>
-                            <p class="text-muted">We specialize in providing innovative beauty solutions, from skincare
-                                essentials to professional-grade cosmetics, tailored to meet diverse needs and
-                                preferences.</p>
-                            <p class="text-muted">With a commitment to excellence and customer satisfaction, Aesthetics
-                                by Lozik is your trusted partner in achieving radiant and confident beauty.</p>
+                            <h6 class="text-success text-uppercase">About Aesthetics by Lozik</h6>
+                            <h3 class="fw-bold">Your Premier Beauty & Wellness Center in
+                                Owerri and Lagos, Nigeria.</h3>
+                            <p class="text-muted">At Aestheticsbylozik, we believe beauty is more than skin deep — it’s
+                                confidence, it’s wellness, and it’s the glow you carry every day. With locations in
+                                Owerri and Lagos, Nigeria, we are dedicated to providing world-class beauty, skincare,
+                                and wellness services designed to help you look and feel your absolute best.
+
+                                Our team of skilled professionals offers personalized treatments tailored to your skin
+                                type, body needs, and beauty goals. From refreshing facials and chemical peels to
+                                relaxing massages, advanced keloid removal, laser treatments, and subtle cosmetic
+                                enhancements like Botox and fillers — we bring science, art, and care together in every
+                                session.</p>
                             <div class="d-flex gap-3 mt-4">
                                 <div class="text-center">
-                                    <h5 class="mb-0 fw-bold text-danger">4.8</h5>
-                                    <small>12,000+ Ratings</small>
+                                    <h5 class="mb-0 fw-bold text-success">99%</h5>
+                                    <small>Satisfaction Rate</small>
                                 </div>
                                 <div class="text-center">
-                                    <h5 class="mb-0 fw-bold text-danger">25+</h5>
-                                    <small>Product Health</small>
+                                    <h5 class="mb-0 fw-bold text-success">200+</h5>
+                                    <small>Customers Served</small>
                                 </div>
                                 <div class="text-center">
-                                    <h5 class="mb-0 fw-bold text-danger">15K</h5>
-                                    <small>Sales Worldwide</small>
+                                    <h5 class="mb-0 fw-bold text-success">5+</h5>
+                                    <small>Years Experience</small>
                                 </div>
                             </div>
                         </div>
@@ -163,7 +166,7 @@ session_start();
                     <div class="container">
                         <div class="row align-items-center">
                             <div class="col-md-6">
-                                <h6 class="text-danger text-uppercase">Why Choose Us</h6>
+                                <h6 class="text-success text-uppercase">Why Choose Us</h6>
                                 <h2 class="fw-bold">Beauty Is Power, A Smile Is Its Sword</h2>
                                 <p class="text-muted">Our commitment to quality and innovation sets us apart in the
                                     beauty industry. We strive to deliver products that not only enhance your appearance
@@ -171,7 +174,7 @@ session_start();
                                 <p class="text-muted">With a focus on sustainability and customer satisfaction, we aim
                                     to create a positive impact on the lives of our customers and the environment.</p>
                                 <div class="d-flex gap-3 mt-3">
-                                    <a href="shop.php" class="btn btn-danger px-4 rounded-pill">Explore Products</a>
+                                    <a href="shop.php" class="btn btn-success px-4 rounded-pill">Explore Products</a>
                                     <a href="booking.php" class="btn btn-outline-secondary px-4 rounded-pill">Book
                                         Appointment</a>
                                 </div>
@@ -180,27 +183,27 @@ session_start();
                                 <div class="row g-3">
                                     <div class="col-6">
                                         <div class="bg-white p-3 shadow-sm rounded text-center">
-                                            <i class="bi bi-leaf text-danger fs-2"></i>
+                                            <i class="bi bi-leaf text-success fs-2"></i>
                                             <h6 class="mt-2">100% Organic</h6>
                                             <p class="small text-muted">Safe for daily use.</p>
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="bg-white p-3 shadow-sm rounded text-center">
-                                            <i class="bi bi-heart-pulse text-danger fs-2"></i>
+                                            <i class="bi bi-heart-pulse text-success fs-2"></i>
                                             <h6 class="mt-2">Improve Health</h6>
                                             <p class="small text-muted">Enhance your beauty.</p>
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="bg-white p-3 shadow-sm rounded text-center">
-                                            <h3 class="text-danger fw-bold">10+</h3>
+                                            <h3 class="text-success fw-bold">5+</h3>
                                             <p class="small text-muted">Years Experience</p>
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="bg-white p-3 shadow-sm rounded text-center">
-                                            <i class="bi bi-shield-check text-danger fs-2"></i>
+                                            <i class="bi bi-shield-check text-success fs-2"></i>
                                             <h6 class="mt-2">Biologically Safe</h6>
                                             <p class="small text-muted">Tested for safety.</p>
                                         </div>

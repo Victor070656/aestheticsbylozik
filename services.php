@@ -11,12 +11,12 @@ session_start();
 <meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 
 <head>
-    <title>Aesthetics By Lozik || FAQ</title>
+    <title>Aesthetics By Lozik || Services</title>
     <!-- meta tags -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="meta description">
+    <meta name="description" content="Aesthetics By Lozik">
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -111,7 +111,7 @@ session_start();
                 <div class="container">
 
                     <div class="text-center mb-5">
-                        <h2 class="fw-bold" style="color: #00234d;">Our Services</h2>
+                        <h2 class="fw-bold text-success">Our Services</h2>
                         <p class="text-muted fs-5">Explore our wide range of professional beauty and wellness treatments
                             tailored just for you.</p>
                     </div>
@@ -130,7 +130,7 @@ session_start();
                                         enzymes, and plant extracts into the skin to rejuvenate and tighten it.</p>
                                 </div>
                                 <div class="card-footer bg-transparent border-0 mb-2">
-                                    <a href="booking.php" class="btn btn-primary btn-sm">Book an Appointment</a>
+                                    <a href="booking.php" class="btn btn-success btn-sm">Book an Appointment</a>
                                 </div>
                             </div>
                         </div>
@@ -147,7 +147,7 @@ session_start();
                                         applied cosmetic fillers for a youthful glow.</p>
                                 </div>
                                 <div class="card-footer bg-transparent border-0 mb-2">
-                                    <a href="booking.php" class="btn btn-primary btn-sm">Book an Appointment</a>
+                                    <a href="booking.php" class="btn btn-success btn-sm">Book an Appointment</a>
                                 </div>
                             </div>
                         </div>
@@ -166,7 +166,7 @@ session_start();
                                         without damaging your skin, helping you clear old regrets painlessly.</p>
                                 </div>
                                 <div class="card-footer bg-transparent border-0 mb-2">
-                                    <a href="booking.php" class="btn btn-primary btn-sm">Book an Appointment</a>
+                                    <a href="booking.php" class="btn btn-success btn-sm">Book an Appointment</a>
                                 </div>
                             </div>
                         </div>
@@ -183,7 +183,7 @@ session_start();
                                         dental care.</p>
                                 </div>
                                 <div class="card-footer bg-transparent border-0 mb-2">
-                                    <a href="booking.php" class="btn btn-primary btn-sm">Book an Appointment</a>
+                                    <a href="booking.php" class="btn btn-success btn-sm">Book an Appointment</a>
                                 </div>
                             </div>
                         </div>
@@ -202,7 +202,7 @@ session_start();
                                         crow’s feet, and frown lines.</p>
                                 </div>
                                 <div class="card-footer bg-transparent border-0 mb-2">
-                                    <a href="booking.php" class="btn btn-primary btn-sm">Book an Appointment</a>
+                                    <a href="booking.php" class="btn btn-success btn-sm">Book an Appointment</a>
                                 </div>
                             </div>
                         </div>
@@ -221,7 +221,7 @@ session_start();
                                     </p>
                                 </div>
                                 <div class="card-footer bg-transparent border-0 mb-2">
-                                    <a href="booking.php" class="btn btn-primary btn-sm">Book an Appointment</a>
+                                    <a href="booking.php" class="btn btn-success btn-sm">Book an Appointment</a>
                                 </div>
                             </div>
                         </div>
@@ -238,7 +238,7 @@ session_start();
                                         and firmness.</p>
                                 </div>
                                 <div class="card-footer bg-transparent border-0 mb-2">
-                                    <a href="booking.php" class="btn btn-primary btn-sm">Book an Appointment</a>
+                                    <a href="booking.php" class="btn btn-success btn-sm">Book an Appointment</a>
                                 </div>
                             </div>
                         </div>
@@ -256,7 +256,7 @@ session_start();
                                         natural glow.</p>
                                 </div>
                                 <div class="card-footer bg-transparent border-0 mb-2">
-                                    <a href="booking.php" class="btn btn-primary btn-sm">Book an Appointment</a>
+                                    <a href="booking.php" class="btn btn-success btn-sm">Book an Appointment</a>
                                 </div>
                             </div>
                         </div>
@@ -275,7 +275,7 @@ session_start();
                                     </p>
                                 </div>
                                 <div class="card-footer bg-transparent border-0 mb-2">
-                                    <a href="booking.php" class="btn btn-primary btn-sm">Book an Appointment</a>
+                                    <a href="booking.php" class="btn btn-success btn-sm">Book an Appointment</a>
                                 </div>
                             </div>
                         </div>
@@ -293,7 +293,7 @@ session_start();
                                         your body goals safely.</p>
                                 </div>
                                 <div class="card-footer bg-transparent border-0 mb-2">
-                                    <a href="booking.php" class="btn btn-primary btn-sm">Book an Appointment</a>
+                                    <a href="booking.php" class="btn btn-success btn-sm">Book an Appointment</a>
                                 </div>
                             </div>
                         </div>
@@ -312,7 +312,7 @@ session_start();
                                         skin brightening, and more.</p>
                                 </div>
                                 <div class="card-footer bg-transparent border-0 mb-2">
-                                    <a href="booking.php" class="btn btn-primary btn-sm">Book an Appointment</a>
+                                    <a href="booking.php" class="btn btn-success btn-sm">Book an Appointment</a>
                                 </div>
                             </div>
                         </div>
@@ -330,7 +330,7 @@ session_start();
                                         radiant glow.</p>
                                 </div>
                                 <div class="card-footer bg-transparent border-0 mb-2">
-                                    <a href="booking.php" class="btn btn-primary btn-sm">Book an Appointment</a>
+                                    <a href="booking.php" class="btn btn-success btn-sm">Book an Appointment</a>
                                 </div>
                             </div>
                         </div>
@@ -341,7 +341,7 @@ session_start();
                     <div class="py-3 text-center mt-4">
                         <p class="text-center text-muted">For more information about our services or to book an
                             appointment, please contact us.</p>
-                        <a href="contact.php" class="btn btn-primary">Contact Us &rarr;</a>
+                        <a href="contact.php" class="btn btn-success">Contact Us &rarr;</a>
                     </div>
                 </div>
             </section>
