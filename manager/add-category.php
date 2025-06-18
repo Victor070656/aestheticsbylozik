@@ -71,7 +71,7 @@ if (!isset($_SESSION["admin"])) {
                   <!-- Add products -->
                   <?php
                   if (isset($_POST["add"])) {
-                    $name = $_POST["name"];
+                    $name = htmlspecialchars($_POST["name"]);
 
                     $addCategory = mysqli_query($conn, "INSERT INTO `service_categories` (`category_name`) VALUES ('$name')");
 

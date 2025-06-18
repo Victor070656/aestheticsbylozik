@@ -69,7 +69,7 @@ if (isset($_GET["s"])) {
                       <button class="btn btn-primary" name="add" type="submit">&plus; Add Category</button>
                       <?php
                       if (isset($_POST["add"])) {
-                        $category = $_POST["category"];
+                        $category = htmlspecialchars($_POST["category"]);
 
                         $addCategory = mysqli_query($conn, "INSERT INTO `categories` (`category_name`) VALUES ('$category')");
 

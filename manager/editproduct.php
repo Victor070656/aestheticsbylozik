@@ -129,12 +129,12 @@ if (mysqli_num_rows($getproducts) > 0) {
                   <!-- edit product -->
                   <?php
                   if (isset($_POST["edit"])) {
-                    $name = $_POST["name"];
-                    $category = $_POST["category"];
-                    $tags = $_POST["tags"];
-                    $price = $_POST["price"];
-                    $discount = $_POST["discount"];
-                    $description = $_POST["description"];
+                    $name = htmlspecialchars($_POST["name"]);
+                    $category = htmlspecialchars($_POST["category"]);
+                    $tags = htmlspecialchars($_POST["tags"]);
+                    $price = htmlspecialchars($_POST["price"]);
+                    $discount = htmlspecialchars($_POST["discount"]);
+                    $description = htmlspecialchars($_POST["description"]);
                     $image = date("His") . $_FILES["image"]["name"];
                     $tmp_image = $_FILES["image"]["tmp_name"];
                     $location = "uploads/" . $image;

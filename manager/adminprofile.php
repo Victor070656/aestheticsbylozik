@@ -79,8 +79,8 @@ $admin = mysqli_fetch_array($getadmin);
                   <!-- update admin -->
                   <?php
                   if (isset($_POST["update"])) {
-                    $email = $_POST["email"];
-                    $password = $_POST["password"];
+                    $email = htmlspecialchars($_POST["email"]);
+                    $password = htmlspecialchars($_POST["password"]);
                     $update = mysqli_query($conn, "UPDATE `admin` SET `email`='$email', `password`='$password'");
                     if ($update) {
                       echo "<script>alert('Successfully updated ✅'); location.href='adminprofile.php'</script>";

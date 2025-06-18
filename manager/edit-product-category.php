@@ -79,7 +79,7 @@ $cat = mysqli_fetch_assoc($getCat);
                       <button class="btn btn-primary" name="add" type="submit">&plus; Edit Category</button>
                       <?php
                       if (isset($_POST["add"])) {
-                        $category = $_POST["category"];
+                        $category = htmlspecialchars($_POST["category"]);
 
                         $addCategory = mysqli_query($conn, "UPDATE `categories` SET `category_name` = '$category' WHERE `id` = '$id'");
 

@@ -13,15 +13,15 @@ if (!isset($_SESSION["user"])) {
 
 if (isset($_GET["trxref"])) {
     $ref = $_GET["txref"];
-    $fname = $_SESSION["appointment"]["fname"];
-    $lname = $_SESSION["appointment"]["lname"];
-    $email = $_SESSION["appointment"]["email"];
-    $phone = $_SESSION["appointment"]["phone"];
-    $service = $_SESSION["appointment"]["service"];
-    $location = $_SESSION["appointment"]["location"];
-    $date = $_SESSION["appointment"]["date"];
-    $time = $_SESSION["appointment"]["time"];
-    $price = $_SESSION["appointment"]["price"];
+    $fname = htmlspecialchars($_SESSION["appointment"]["fname"]);
+    $lname = htmlspecialchars($_SESSION["appointment"]["lname"]);
+    $email = htmlspecialchars($_SESSION["appointment"]["email"]);
+    $phone = htmlspecialchars($_SESSION["appointment"]["phone"]);
+    $service = htmlspecialchars($_SESSION["appointment"]["service"]);
+    $location = htmlspecialchars($_SESSION["appointment"]["location"]);
+    $date = htmlspecialchars($_SESSION["appointment"]["date"]);
+    $time = htmlspecialchars($_SESSION["appointment"]["time"]);
+    $price = htmlspecialchars($_SESSION["appointment"]["price"]);
 
     $getService = mysqli_query($conn, "SELECT * FROM `services` WHERE `id` = '$service'");
     $serv = mysqli_fetch_assoc($getService);

@@ -91,9 +91,9 @@ if (!isset($_SESSION["admin"])) {
                   <!-- Add products -->
                   <?php
                   if (isset($_POST["add"])) {
-                    $title = $_POST["title"];
-                    $category = $_POST["category"];
-                    $price = $_POST["price"];
+                    $title = htmlspecialchars($_POST["title"]);
+                    $category = htmlspecialchars($_POST["category"]);
+                    $price = htmlspecialchars($_POST["price"]);
 
                     $addService = mysqli_query($conn, "INSERT INTO `services` (`category_id`, `title`, `price`) VALUES ('$category', '$title', '$price')");
 

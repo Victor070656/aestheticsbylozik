@@ -6,6 +6,12 @@ if (!isset($_SESSION["admin"])) {
 }
 
 $getOrders = mysqli_query($conn, "SELECT * FROM `orders` ORDER BY `id` DESC LIMIT 5");
+$getAllOrders = mysqli_query($conn, "SELECT * FROM `orders`");
+$getAllUsers = mysqli_query($conn, "SELECT * FROM `users`");
+$getAllProducts = mysqli_query($conn, "SELECT * FROM `products`");
+$getRevenue = mysqli_query($conn, "SELECT SUM(`amount`) as rev FROM `orders`");
+$getRev = mysqli_fetch_assoc($getRevenue);
+$rev = $getRev["rev"] ?? 0;
 
 ?>
 <!DOCTYPE html>
@@ -57,7 +63,7 @@ $getOrders = mysqli_query($conn, "SELECT * FROM `orders` ORDER BY `id` DESC LIMI
             <div class="card stat-widget border-start border-danger border-3   ">
               <div class="card-body">
                 <h5 class="card-title">Users</h5>
-                <h2>132</h2>
+                <h2><?= $getAllUsers->num_rows; ?></h2>
               </div>
             </div>
           </div>
@@ -65,7 +71,7 @@ $getOrders = mysqli_query($conn, "SELECT * FROM `orders` ORDER BY `id` DESC LIMI
             <div class="card stat-widget border-start border-warning border-3 ">
               <div class="card-body">
                 <h5 class="card-title">Products</h5>
-                <h2>287</h2>
+                <h2><?= $getAllProducts->num_rows; ?></h2>
               </div>
             </div>
           </div>
@@ -73,7 +79,7 @@ $getOrders = mysqli_query($conn, "SELECT * FROM `orders` ORDER BY `id` DESC LIMI
             <div class="card stat-widget border-start border-success border-3 ">
               <div class="card-body">
                 <h5 class="card-title">Orders</h5>
-                <h2>75</h2>
+                <h2><?= $getAllOrders->num_rows; ?></h2>
 
               </div>
             </div>
@@ -82,7 +88,7 @@ $getOrders = mysqli_query($conn, "SELECT * FROM `orders` ORDER BY `id` DESC LIMI
             <div class="card stat-widget border-start border-primary border-3 ">
               <div class="card-body">
                 <h5 class="card-title">Revenue</h5>
-                <h2>$87</h2>
+                <h2>₦<?= number_format($rev); ?></h2>
 
               </div>
             </div>
