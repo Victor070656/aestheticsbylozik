@@ -34,6 +34,16 @@ session_start();
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+  <style>
+    .error-message {
+      color: red;
+      padding: 10px;
+      background: #ffe5e5;
+      border: 1px solid #ff0000;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 
 <body class="login-page">
@@ -56,6 +66,12 @@ session_start();
             </div>
 
             <form method="post">
+              <?php if (isset($_SESSION['error'])): ?>
+                <div class="error-message">
+                  <?= htmlspecialchars($_SESSION['error']) ?>
+                </div>
+                <?php unset($_SESSION['error']);
+              endif; ?>
               <div class="mb-3">
                 <div class="form-floating">
                   <input type="email" class="form-control" name="email" id="floatingInput"
@@ -83,9 +99,18 @@ session_start();
                 $loginUser = mysqli_query($conn, "SELECT * FROM `admin` WHERE `email`='$email' AND `password`='$password'");
                 if (mysqli_num_rows($loginUser) > 0) {
                   $_SESSION["admin"] = "admin";
-                  echo "<script>alert('Login successful ✅'); location.href='./'</script>";
+                  ?>
+                  <script>
+                    location.href = './'
+                  </script>
+
+                  <?php
                 } else {
-                  echo "<script>alert('Wrong Login Credentials');</script>";
+                  $_SESSION['error'] = "Wrong login credentials 🚫";
+                  echo "<script>
+                      location.href = './login.php'
+                  </script>";
+                  exit;
                 }
               }
               ?>

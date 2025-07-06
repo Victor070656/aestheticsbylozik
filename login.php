@@ -71,6 +71,14 @@ session_start();
             --section-subheading-font-size: 16px;
             --section-subheading-font-weight: 400;
         }
+
+        .error-message {
+            color: red;
+            padding: 10px;
+            background: #ffe5e5;
+            border: 1px solid #ff0000;
+            border-radius: 5px;
+        }
     </style>
 
     <link rel="stylesheet" href="assets/css/vendor.css">
@@ -114,6 +122,13 @@ session_start();
                             <h2 class=" text-center">Login</h2>
                         </div>
                         <div class="row">
+                            <?php if (isset($_SESSION['error'])): ?>
+                                <div class="error-message">
+                                    <?= htmlspecialchars($_SESSION['error']) ?>
+                                </div>
+                                <?php unset($_SESSION['error']);
+                            endif; ?>
+
                             <div class="col-12">
                                 <fieldset>
                                     <label class="label">Email address</label>
@@ -134,6 +149,22 @@ session_start();
                                 <a href="register.php" class="btn btn-link mt-2 ">CREATE AN ACCOUNT</a>
                             </div>
                         </div>
+                        <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
+
+                        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                                <div class="toast-header">
+                                    <!-- <img src="..." class="rounded me-2" alt="..."> -->
+                                    <strong class="me-auto">Success</strong>
+                                    <small>now</small>
+                                    <button type="button" class="btn-close" data-bs-dismiss="toast"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="toast-body">
+                                    Login Successful
+                                </div>
+                            </div>
+                        </div>
                         <!-- login -->
                         <?php
                         if (isset($_POST["login"])) {
@@ -144,7 +175,18 @@ session_start();
                             if (mysqli_num_rows($loginUser) > 0) {
                                 $user = mysqli_fetch_assoc($loginUser);
                                 $_SESSION["user"] = $user;
-                                echo "<script>alert('Login successful ✅'); location.href='./'</script>";
+                                ?>
+                                <script>
+                                    location.href = './'
+                                </script>
+
+                                <?php
+                            } else {
+                                $_SESSION['error'] = "Wrong login credentials 🚫";
+                                echo "<script>
+                                    location.href = './login.php'
+                                </script>";
+                                exit;
                             }
                         }
                         ?>
